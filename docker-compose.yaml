@@ -1,0 +1,41 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    depends_on:
+      - db
+    ports:
+      - "8000:80"
+      #environment:
+      # Setze hier die benötigten Umgebungsvariablen
+      # Beispiel:
+      # DATABASE_URL: postgresql://user:password@db:5432/meinedatenbank
+    volumes:
+      - .:/app
+    networks:
+      - backend-network
+
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: test_user
+      POSTGRES_PASSWORD: test_password_123
+      POSTGRES_DB: verteilte_systeme_db
+    volumes:
+      - verteilte_systeme_postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    networks:
+      - backend-network
+
+
+networks:
+  backend-network:
+    driver: bridge
+
+
+volumes:
+    verteilte_systeme_postgres_data:
