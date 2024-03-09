@@ -21,9 +21,9 @@ def get_db():
         db.close()
 
 
-@app.get("/")
+@app.get("/", response_model=schemas.Message, status_code=status.HTTP_200_OK)
 def read_root():
-    return {"message": "Welcome to this fantastic app!"}
+    return schemas.Message(message="Welcome to the Verteilte Systeme API.")
 
 
 @app.post("/connect/", response_model=schemas.User, status_code=status.HTTP_201_CREATED)
@@ -51,9 +51,8 @@ def set_answer(user_id: int, question_id, answer: bool, db: Session = Depends(ge
         crud.update_user_level(db, user_id, 1)
 
     crud.set_answer(db, user_id, question_id, answer)
-    return {"message": "Answer set."}
 
-
+    return schemas.Message(message="Answer set.")
 
 # @app.post("/users/", response_model=schemas.User)
 # def create_user(user: schemas.UserCreate, db: Session = Depends(get_db)):
