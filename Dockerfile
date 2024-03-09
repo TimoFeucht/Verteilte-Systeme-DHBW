@@ -13,12 +13,12 @@ RUN pip install poetry && poetry config virtualenvs.create false
 RUN poetry install --no-root --no-dev
 
 # Den gesamten Projektcode in das Verzeichnis '/app' kopieren
-COPY ./verteilte_systeme_dhbw/backend/sql_app /app
+COPY ./verteilte_systeme_dhbw/backend/sql_app .
 
 # Die Umgebungsvariablen (optional) aus einer .env Datei setzen
 # ENV USER=youruser
 # ENV PASSWORD=yourpassword
 
 # Den Uvicorn-Server starten
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "80"]
+CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "80"]
 # CMD ["uvicorn", "app.main:app", "--reload"]
