@@ -41,10 +41,12 @@ class User(Base):
     level = Column(Integer, nullable=False, default=1)
     CheckConstraint('level >= 1 AND level <= 10')
 
+    answered_questions = relationship("AnsweredQuestion", cascade="all, delete")
+
 
 class AnsweredQuestion(Base):
     __tablename__ = 'answered_questions'
-    u_id = Column('U-ID', Integer, ForeignKey('user.U-ID'), primary_key=True)
+    u_id = Column('U-ID', Integer, ForeignKey('user.U-ID', ondelete='CASCADE'), primary_key=True)
     q_id = Column('Q-ID', Integer, ForeignKey('questions.Q-ID'), primary_key=True)
     answer = Column(Boolean, nullable=False)
 

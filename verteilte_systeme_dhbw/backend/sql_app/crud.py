@@ -36,7 +36,7 @@ def get_question_for_user_id(db: Session, user_id: int):
                             solution=solution_class)
 
 
-def update_user_level(db, user_id, increment):
+def update_user_level(db: Session, user_id: int, increment: int = -1 | 1):
     # update user level
     user = db.query(models_vs.User).filter(models_vs.User.id == user_id).first()
     user.level += increment
@@ -44,12 +44,25 @@ def update_user_level(db, user_id, increment):
     db.refresh(user)
 
 
-def set_answer(db, user_id, question_id, answer):
+def set_answer(db: Session, user_id: int, question_id: int, answer: bool):
     # new entry in answered_questions
     db_answered_question = models_vs.AnsweredQuestion(u_id=user_id, q_id=question_id, answer=answer)
     db.add(db_answered_question)
     db.commit()
     db.refresh(db_answered_question)
+    return None
+
+
+def get_user_level(db: Session, user_id: int):
+    user = db.query(models_vs.User).filter(models_vs.User.id == user_id).first()
+    return user
+
+
+def delete_user(db: Session, user_id: int):
+    # delete user
+    user = db.query(models_vs.User).filter(models_vs.User.id == user_id).first()
+    db.delete(user)
+    db.commit()
     return None
 
 # def get_user(db: Session, user_id: int):

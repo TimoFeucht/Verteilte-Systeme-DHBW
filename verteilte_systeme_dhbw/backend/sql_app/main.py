@@ -11,8 +11,6 @@ models_vs.Base.metadata.create_all(bind=engine)
 
 app = FastAPI()
 
-
-# Dependency
 def get_db():
     db = SessionLocal()
     try:
@@ -29,11 +27,11 @@ def read_root():
 @app.post("/connect/", response_model=schemas.User, status_code=status.HTTP_201_CREATED)
 def create_user(db: Session = Depends(get_db)):
     user = schemas.UserCreate(level=1)
-    db_user = crud.create_new_user(db, user)
-    if db_user:
-        return db_user
+    new_user = crud.create_new_user(db, user)
+    if new_user:
+        return new_user
     else:
-        HTTPException(status_code=400, detail="User creation failed.")
+        raise HTTPException(status_code=400, detail="User creation failed.")
 
 
 @app.get("/question/", response_model=schemas.Question, status_code=status.HTTP_200_OK)
@@ -42,7 +40,7 @@ def get_question(user_id: int, db: Session = Depends(get_db)):
     if question:
         return question
     else:
-        HTTPException(status_code=400, detail="Question retrieval failed.")
+        raise HTTPException(status_code=400, detail="Question retrieval failed.")
 
 
 @app.put("/answer/", response_model=schemas.Message, status_code=status.HTTP_200_OK)
@@ -52,7 +50,34 @@ def set_answer(user_id: int, question_id, answer: bool, db: Session = Depends(ge
 
     crud.set_answer(db, user_id, question_id, answer)
 
-    return schemas.Message(message="Answer set.")
+    return schemas.Message(message="Answer set successfully.")
+
+
+@app.put("/updateUserLevel/", response_model=schemas.Message, status_code=status.HTTP_200_OK)
+def update_user_level(user_id: int, level_adjustment: int, db: Session = Depends(get_db)):
+    # raise http exception, if level_adjustment is not -1 or 1
+    if level_adjustment not in (-1, 1):
+        raise HTTPException(status_code=422, detail="Only a level adjustment of +/- 1 is allowed.")
+
+    crud.update_user_level(db, user_id, level_adjustment)
+
+    return schemas.Message(message="Level successfully updated.")
+
+
+@app.get("/userLevel/", response_model=schemas.User, status_code=status.HTTP_200_OK)
+def get_user_level(user_id: int, db: Session = Depends(get_db)):
+    user = crud.get_user_level(db, user_id)
+    if user:
+        return user
+    else:
+        raise HTTPException(status_code=404, detail=f"No user with user_id={user_id} found.")
+
+
+@app.delete("/deleteUser/", response_model=schemas.Message, status_code=status.HTTP_200_OK)
+def delete_user(user_id: int, db: Session = Depends(get_db)):
+    crud.delete_user(db, user_id)
+
+    return schemas.Message(message=f"User with user_id={user_id} successfully deleted.")
 
 # @app.post("/users/", response_model=schemas.User)
 # def create_user(user: schemas.UserCreate, db: Session = Depends(get_db)):

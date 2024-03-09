@@ -49,10 +49,12 @@ CREATE TABLE IF NOT EXISTS `answered_questions`
 (
     `U-ID`   INTEGER NOT NULL,
     `Q-ID`   INTEGER NOT NULL,
-    `answer` BOOLEAN NOT NULL,
+    `answer` INTEGER NOT NULL,
     PRIMARY KEY (`U-ID`, `Q-ID`),
-    FOREIGN KEY (`U-ID`) REFERENCES `user` (`U-ID`),
-    FOREIGN KEY (`Q-ID`) REFERENCES `questions` (`Q-ID`)
+    CONSTRAINT `U-ID-Constraint` FOREIGN KEY (`U-ID`) REFERENCES `user` (`U-ID`) ON DELETE CASCADE,
+    CONSTRAINT `Q-ID-Constraint` FOREIGN KEY (`Q-ID`) REFERENCES `questions` (`Q-ID`) ON DELETE CASCADE
+--     FOREIGN KEY (`U-ID`) REFERENCES `user` (`U-ID`),
+--     FOREIGN KEY (`Q-ID`) REFERENCES `questions` (`Q-ID`)
 );
 
 
