@@ -1,13 +1,13 @@
-from fastapi import Depends, FastAPI, HTTPException
+from fastapi import Depends, FastAPI, HTTPException, status
 from sqlalchemy.orm import Session
 
-from . import crud, models, schemas
+from . import crud, models_vs, schemas
 # import models
 # import crud
 # import schemas
 from .database import SessionLocal, engine
 
-models.Base.metadata.create_all(bind=engine)
+models_vs.Base.metadata.create_all(bind=engine)
 
 app = FastAPI()
 
@@ -24,6 +24,36 @@ def get_db():
 @app.get("/")
 def read_root():
     return {"message": "Welcome to this fantastic app!"}
+
+
+@app.post("/connect/", response_model=schemas.User, status_code=status.HTTP_201_CREATED)
+def create_user(db: Session = Depends(get_db)):
+    user = schemas.UserCreate(level=1)
+    db_user = crud.create_new_user(db, user)
+    if db_user:
+        return db_user
+    else:
+        HTTPException(status_code=400, detail="User creation failed.")
+
+
+@app.get("/question/", response_model=schemas.Question, status_code=status.HTTP_200_OK)
+def get_question(user_id: int, db: Session = Depends(get_db)):
+    question = crud.get_question_for_user_id(db, user_id)
+    if question:
+        return question
+    else:
+        HTTPException(status_code=400, detail="Question retrieval failed.")
+
+
+@app.put("/answer/", response_model=schemas.Message, status_code=status.HTTP_200_OK)
+def set_answer(user_id: int, question_id, answer: bool, db: Session = Depends(get_db)):
+    if answer:
+        crud.update_user_level(db, user_id, 1)
+
+    crud.set_answer(db, user_id, question_id, answer)
+    return {"message": "Answer set."}
+
+
 
 # @app.post("/users/", response_model=schemas.User)
 # def create_user(user: schemas.UserCreate, db: Session = Depends(get_db)):

@@ -1,6 +1,5 @@
 from sqlalchemy import create_engine
-from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import sessionmaker
+from sqlalchemy.orm import sessionmaker, declarative_base
 
 # "postgresql://user:password@postgresserver/db"
 # "postgresql://test_user:test_password_123@db/verteilte_systeme_db"

@@ -1,7 +1,18 @@
-# Backend for the distributed systems project at DHBW Stuttgart
+# Backend for the distributed systems project _Lernsystem_ at DHBW Stuttgart
 
-## Setup - Development without Docker
-1. Install Python 3.11.7
+## Start backend
+**If this is the first time you are using this repository, please go to section "Setup - First time".**
+1. Start database with rqlite
+```bash
+rqlited -node-id 1 -http-addr 127.0.0.1:4001 -raft-addr 127.0.0.1:4002 ./db-rqlite
+```
+2. Start backend with uvicorn
+```bash
+uvicorn sql_app.main:app --reload
+```
+
+## Setup - First time
+1. Install Python 3.11.7 (other versions may work as well, but are not tested)
 2. Install [Poetry](https://python-poetry.org/)
 3. Install dependencies with poetry
 ```bash 
@@ -12,10 +23,10 @@ poetry install
    - Extract the archive and navigate to the extracted folder. Past the folder in the desired location, e.g. `C:\Program Files\rqlite\rqlite-latest-win64`
 5. Add folder to environment variable `Path` (e.g. `C:\Program Files\rqlite\rqlite-latest-win64`)
 6. Start node with `rqlited -node-id {node id} -http-addr {adress:port} -raft-addr {adress:port} {path to db}`
-   - node-id: This can be any string, as long as it’s unique in the (cluster
-   - http-addr: This is the address and port I’m going to use for the HTTP interface, which is also used by the rqlite command-line client, etc.
-   - raft-addr: This is the address and port that other nodes will connect to for intra - cluster traffic.
-   - C:\Users\Timo\AppData\Local\Programs\rqlite\db: This directory will hold the database and state information.
+   - `node-id`: This can be any string, as long as it’s unique in the (cluster
+   - `http-addr`: This is the address and port I’m going to use for the HTTP interface, which is also used by the rqlite command-line client, etc.
+   - `raft-addr`: This is the address and port that other nodes will connect to for intra - cluster traffic.
+   - `path to db`: This directory will hold the database and state information.
 ```bash
 rqlited -node-id 1 -http-addr 127.0.0.1:4001 -raft-addr 127.0.0.1:4002 ./db-rqlite
 ```
@@ -42,21 +53,43 @@ SELECT question FROM questions
 uvicorn sql_app.main:app --reload
 ```
 
-## Setup - Development with Docker
+## Architecture
+The backend is a REST API as a distributed system written with [FastAPI](https://fastapi.tiangolo.com//) and [Nats](https://nats.io/) that allows the user to interact with the backend.
+The backend is also responsible for the communication with the database.
+The database is a distributed [rqlite](https://rqlite.io/) database.
 
-**not working!!!**
+The backend runns on `localhost:8000` and the database on `localhost:4001`.
 
-1. Use stepts 1-6 from the "Setup - Development without Docker" section
-2. Install Docker
-3. Run the backend with docker-compose
-```bash
-docker-compose up --build
-```
-4. Build container
-```bash
-  docker build -t verteilte-systeme-backend .
-```
-5. Run container
-```bash
-docker run -p 8000:80 verteilte-systeme-backend
-```
+[//]: # (## Setup - Development with Docker)
+
+[//]: # ()
+[//]: # (**not working!!!**)
+
+[//]: # ()
+[//]: # (1. Use stepts 1-6 from the "Setup - Development without Docker" section)
+
+[//]: # (2. Install Docker)
+
+[//]: # (3. Run the backend with docker-compose)
+
+[//]: # (```bash)
+
+[//]: # (docker-compose up --build)
+
+[//]: # (```)
+
+[//]: # (4. Build container)
+
+[//]: # (```bash)
+
+[//]: # (  docker build -t verteilte-systeme-backend .)
+
+[//]: # (```)
+
+[//]: # (5. Run container)
+
+[//]: # (```bash)
+
+[//]: # (docker run -p 8000:80 verteilte-systeme-backend)
+
+[//]: # (```)
