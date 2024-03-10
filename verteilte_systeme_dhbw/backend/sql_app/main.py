@@ -11,6 +11,7 @@ models_vs.Base.metadata.create_all(bind=engine)
 
 app = FastAPI()
 
+
 def get_db():
     db = SessionLocal()
     try:
@@ -26,8 +27,7 @@ def read_root():
 
 @app.post("/connect/", response_model=schemas.User, status_code=status.HTTP_201_CREATED)
 def create_user(db: Session = Depends(get_db)):
-    user = schemas.UserCreate(level=1)
-    new_user = crud.create_new_user(db, user)
+    new_user = crud.create_new_user(db)
     if new_user:
         return new_user
     else:
@@ -36,6 +36,10 @@ def create_user(db: Session = Depends(get_db)):
 
 @app.get("/question/", response_model=schemas.Question, status_code=status.HTTP_200_OK)
 def get_question(user_id: int, db: Session = Depends(get_db)):
+    # ToDo: check for various error cases -> sent http exception
+    # user_id not found
+    # no more questions for user_id
+    # ...
     question = crud.get_question_for_user_id(db, user_id)
     if question:
         return question
@@ -45,10 +49,15 @@ def get_question(user_id: int, db: Session = Depends(get_db)):
 
 @app.put("/answer/", response_model=schemas.Message, status_code=status.HTTP_200_OK)
 def set_answer(user_id: int, question_id, answer: bool, db: Session = Depends(get_db)):
-    if answer:
-        crud.update_user_level(db, user_id, 1)
+    answered_question = crud.set_answer(db, user_id, question_id, answer)
+    if not answered_question:
+        raise HTTPException(status_code=404, detail="Answer could not be set. User-ID or Question-ID not found.")
 
-    crud.set_answer(db, user_id, question_id, answer)
+    # update user level if answer is correct
+    if answer:
+        user = crud.update_user_level(db, user_id, 1)
+        if not user:
+            raise HTTPException(status_code=403, detail="User level not in range 1-10.")
 
     return schemas.Message(message="Answer set successfully.")
 
@@ -57,9 +66,11 @@ def set_answer(user_id: int, question_id, answer: bool, db: Session = Depends(ge
 def update_user_level(user_id: int, level_adjustment: int, db: Session = Depends(get_db)):
     # raise http exception, if level_adjustment is not -1 or 1
     if level_adjustment not in (-1, 1):
-        raise HTTPException(status_code=422, detail="Only a level adjustment of +/- 1 is allowed.")
+        raise HTTPException(status_code=403, detail="Only a level adjustment of +/- 1 is allowed.")
 
-    crud.update_user_level(db, user_id, level_adjustment)
+    user = crud.update_user_level(db, user_id, level_adjustment)
+    if not user:
+        raise HTTPException(status_code=403, detail="User level not in range 1-10.")
 
     return schemas.Message(message="Level successfully updated.")
 
@@ -75,7 +86,9 @@ def get_user_level(user_id: int, db: Session = Depends(get_db)):
 
 @app.delete("/deleteUser/", response_model=schemas.Message, status_code=status.HTTP_200_OK)
 def delete_user(user_id: int, db: Session = Depends(get_db)):
-    crud.delete_user(db, user_id)
+    user = crud.delete_user(db, user_id)
+    if user:
+        raise HTTPException(status_code=404, detail=f"No user with user_id={user_id} found.")
 
     return schemas.Message(message=f"User with user_id={user_id} successfully deleted.")
 

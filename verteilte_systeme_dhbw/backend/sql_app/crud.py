@@ -1,3 +1,5 @@
+from typing import Any
+
 from sqlalchemy.orm import Session
 
 from . import models_vs, schemas
@@ -7,9 +9,8 @@ from . import models_vs, schemas
 # import schemas
 
 
-def create_new_user(db: Session, user: schemas.UserCreate):
-    db_user = models_vs.User(level=user.level)
-    print(db_user)
+def create_new_user(db: Session):
+    db_user = models_vs.User(level=1)
     db.add(db_user)
     db.commit()
     db.refresh(db_user)
@@ -39,18 +40,42 @@ def get_question_for_user_id(db: Session, user_id: int):
 def update_user_level(db: Session, user_id: int, increment: int = -1 | 1):
     # update user level
     user = db.query(models_vs.User).filter(models_vs.User.id == user_id).first()
-    user.level += increment
+
+    new_user_level = user.level + increment
+    # user level not in range 1-10
+    if new_user_level < 1 or new_user_level > 10:
+        return None
+
+    # update user level
+    user.level = new_user_level
     db.commit()
     db.refresh(user)
+    return user
 
 
 def set_answer(db: Session, user_id: int, question_id: int, answer: bool):
     # new entry in answered_questions
-    db_answered_question = models_vs.AnsweredQuestion(u_id=user_id, q_id=question_id, answer=answer)
-    db.add(db_answered_question)
+    # set answer for user_id and question_id only if user_id and question_id are valid
+    user = db.query(models_vs.User).filter(models_vs.User.id == user_id).first()
+    question = db.query(models_vs.Question).filter(models_vs.Question.id == question_id).first()
+    if not user or not question:
+        return None
+
+    db_answered_question = db.query(models_vs.AnsweredQuestion).filter(
+        models_vs.AnsweredQuestion.u_id == user_id, models_vs.AnsweredQuestion.q_id == question_id).first()
+
+    if db_answered_question:
+        # update answer if already answered
+        db_answered_question.answer = answer
+    else:
+        # set answer
+        db_answered_question = models_vs.AnsweredQuestion(u_id=user_id, q_id=question_id, answer=answer)
+        db.add(db_answered_question)
+
     db.commit()
     db.refresh(db_answered_question)
-    return None
+
+    return db_answered_question
 
 
 def get_user_level(db: Session, user_id: int):
@@ -63,7 +88,7 @@ def delete_user(db: Session, user_id: int):
     user = db.query(models_vs.User).filter(models_vs.User.id == user_id).first()
     db.delete(user)
     db.commit()
-    return None
+    return user
 
 # def get_user(db: Session, user_id: int):
 #     return db.query(models.User).filter(models.User.id == user_id).first()
