@@ -31,12 +31,16 @@ class SolutionBase(BaseModel):
     explanation: str
 
 
+class Solution(SolutionBase):
+    pass
+
+
 class QuestionBase(BaseModel):
     id: int
     level: int
     topic: str
     question: str
-    solution: SolutionBase
+    solution: Solution
 
 
 class Question(QuestionBase):
