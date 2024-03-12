@@ -1,5 +1,6 @@
 from typing import Any
 
+from sqlalchemy import text, select
 from sqlalchemy.orm import Session
 
 from . import models, schemas
@@ -26,10 +27,17 @@ def verify_user(db: Session, user_id: int):
 
 
 def get_question_for_user_id(db: Session, user: schemas.User):
-    # get question with user level = question level
     # ToDo: check if question is already answered by user -> if yes, get next question
     # use table answered_questions
-    question = db.query(models.Question).filter(models.Question.level == user.level).first()
+    # question = db.query(models.Question).filter(models.Question.level == user.level).first()
+    # question = db.execute(select(models.Question).where(models.Question.level == user.level)).scalars().first()
+
+    sql_query = text("SELECT q.q_id, q.s_id, q.t_id, q.level, q.question FROM questions AS q  WHERE q.level = :level LIMIT 1;")
+    # sql_query = text("SELECT q.q_id, q.s_id, q.t_id, q.level, q.question FROM questions AS q INNER JOIN answered_questions AS a ON a.q_id = q.q_id WHERE q.level = :level LIMIT 1;")
+    result = db.execute(sql_query, {"level": user.level}).fetchone()
+    # concert result to question
+    question = models.Question(id=result[0], s_id=result[1], t_id=result[2], level=result[3], question=result[4])
+
     # get topic name
     topic = db.query(models.Topic).filter(models.Topic.id == question.t_id).first()
     # get solution

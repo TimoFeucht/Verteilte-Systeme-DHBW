@@ -7,13 +7,13 @@ Base = declarative_base()
 
 class Topic(Base):
     __tablename__ = 'topic'
-    id = Column('T-ID', Integer, primary_key=True)
+    id = Column('T_ID', Integer, primary_key=True)
     name = Column(Text, nullable=False)
 
 
 class Solution(Base):
     __tablename__ = 'solutions'
-    id = Column('S-ID', Integer, primary_key=True)
+    id = Column('S_ID', Integer, primary_key=True)
     a = Column(Text, nullable=False)
     b = Column(Text, nullable=False)
     c = Column(Text, nullable=False)
@@ -24,9 +24,9 @@ class Solution(Base):
 
 class Question(Base):
     __tablename__ = 'questions'
-    id = Column('Q-ID', Integer, primary_key=True)
-    s_id = Column('S-ID', Integer, ForeignKey('solutions.S-ID'), nullable=False)
-    t_id = Column('T-ID', Integer, ForeignKey('topic.T-ID'), nullable=False)
+    id = Column('Q_ID', Integer, primary_key=True)
+    s_id = Column('S_ID', Integer, ForeignKey('solutions.S_ID'), nullable=False)
+    t_id = Column('T_ID', Integer, ForeignKey('topic.T_ID'), nullable=False)
     level = Column(Integer, nullable=False, default=1)
     CheckConstraint('level >= 1 AND level <= 10', name='level_constraint')
     question = Column(Text, nullable=False)
@@ -37,7 +37,7 @@ class Question(Base):
 
 class User(Base):
     __tablename__ = 'user'
-    id = Column('U-ID', Integer, primary_key=True)
+    id = Column('U_ID', Integer, primary_key=True)
     level = Column(Integer, nullable=False, default=1)
     CheckConstraint('level >= 1 AND level <= 10')
 
@@ -46,8 +46,8 @@ class User(Base):
 
 class AnsweredQuestion(Base):
     __tablename__ = 'answered_questions'
-    u_id = Column('U-ID', Integer, ForeignKey('user.U-ID', ondelete='CASCADE'), primary_key=True)
-    q_id = Column('Q-ID', Integer, ForeignKey('questions.Q-ID'), primary_key=True)
+    u_id = Column('U_ID', Integer, ForeignKey('user.U_ID', ondelete='CASCADE'), primary_key=True)
+    q_id = Column('Q_ID', Integer, ForeignKey('questions.Q_ID'), primary_key=True)
     answer = Column(Boolean, nullable=False)
 
     user = relationship("User")
