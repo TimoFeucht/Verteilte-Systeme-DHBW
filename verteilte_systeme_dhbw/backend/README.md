@@ -15,6 +15,8 @@ uvicorn sql_app.main:app --reload
 ```bash
 rqlite -H 127.0.0.1 -p 4001
 ```
+The backend now runns on `localhost:8000` and the database on `localhost:4001`.
+
 
 ## Setup - First time
 1. Install Python 3.11.7 (other versions may work as well, but are not tested)
@@ -41,11 +43,12 @@ rqlited -node-id 1 -http-addr 127.0.0.1:4001 -raft-addr 127.0.0.1:4002 ./db-rqli
 rqlite -H 127.0.0.1 -p 4001
 ```
 **Warning:** Do not touch the database if you are not sure what you are doing. This can lead to data corruption and loss of data. 
-9. _Setup:_ Create the database schema and insert data with file `verteilte_systeme_dhbw/backend/db-model/db-setup.py`. Run the file only out of this README.md file, not out of the `verteilte_systeme_dhbw/backend/db-model` folder.
+
+8. _Setup:_ Create the database schema and insert data with file `verteilte_systeme_dhbw/backend/db-model/db-setup.py`. Run the file only out of this README.md file, not out of the `verteilte_systeme_dhbw/backend/db-model` folder.
 ```bash
 python db-model/db-setup.py
 ```
-11. _Optional:_ Test rqlite database
+9. _Optional:_ Test rqlite database
 ```bash
 rqlite -H 127.0.0.1 -p 4001
 ```
@@ -57,6 +60,7 @@ SELECT question FROM questions
 ```bash
 uvicorn sql_app.main:app --reload
 ```
+The backend now runns on `localhost:8000` and the database on `localhost:4001`.
 
 ## Architecture
 The backend is a REST API as a distributed system written with [FastAPI](https://fastapi.tiangolo.com//) and [Nats](https://nats.io/) that allows the user to interact with the backend.
