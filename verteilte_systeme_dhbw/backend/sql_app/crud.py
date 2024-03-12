@@ -19,6 +19,13 @@ def create_new_user(db: Session):
 
 
 def verify_user(db: Session, user_id: int):
+    """
+    Verify user_id
+    :param db: database session
+    :param user_id: schemas.User.id
+    :return: schemas.User | None
+    Returns a user if the user_id is valid, otherwise None. Use for verifying user_id before using it in other functions.
+    """
     user = db.query(models.User).filter(models.User.id == user_id).first()
     if user:
         return user
@@ -27,31 +34,46 @@ def verify_user(db: Session, user_id: int):
 
 
 def get_question_for_user_id(db: Session, user: schemas.User):
-    # ToDo: check if question is already answered by user -> if yes, get next question
-    # use table answered_questions
-    # question = db.query(models.Question).filter(models.Question.level == user.level).first()
-    # question = db.execute(select(models.Question).where(models.Question.level == user.level)).scalars().first()
+    """
+    Get a question for a user_id
+    :param db: database session
+    :param user: schemas.User
+    :return: schemas.Question
+    Returns a question for a user_id and the users level which has been answered false.
+    If the user has already answered all questions correct, a new question is returned for the same level.
+    """
+    sql_query_get_old_question_with_false_answer = text("SELECT q.q_id FROM questions AS q INNER JOIN "
+                                                        "answered_questions AS a ON q.q_id = a.q_id WHERE "
+                                                        "a.answer=false AND a.u_id = :u_id AND q.level= :level;")
 
-    sql_query = text("SELECT q.q_id, q.s_id, q.t_id, q.level, q.question FROM questions AS q  WHERE q.level = :level LIMIT 1;")
-    # sql_query = text("SELECT q.q_id, q.s_id, q.t_id, q.level, q.question FROM questions AS q INNER JOIN answered_questions AS a ON a.q_id = q.q_id WHERE q.level = :level LIMIT 1;")
-    result = db.execute(sql_query, {"level": user.level}).fetchone()
-    # concert result to question
-    question = models.Question(id=result[0], s_id=result[1], t_id=result[2], level=result[3], question=result[4])
+    sql_query_get_new_question = text("SELECT q.q_id FROM questions AS q WHERE q.level = :level EXCEPT SELECT a.q_id "
+                                      "FROM answered_questions AS a WHERE a.u_id = :u_id;")
 
-    # get topic name
-    topic = db.query(models.Topic).filter(models.Topic.id == question.t_id).first()
-    # get solution
-    solution = db.query(models.Solution).filter(models.Solution.id == question.s_id).first()
+    sql_query_get_question_data = text("SELECT q.q_id, q.level, q.question, s.a, s.b, s.c, s.correct_answer, "
+                                       "s.explanation, t.name FROM questions AS q INNER JOIN solutions AS s ON q.s_id "
+                                       "= s.s_id INNER JOIN topics AS t ON q.t_id = t.t_id WHERE q.q_id = :q_id;")
 
-    solution_class = schemas.Solution(a=solution.a, b=solution.b, c=solution.c,
-                                      correct_answer=solution.correct_answer, explanation=solution.explanation)
+    result = db.execute(sql_query_get_old_question_with_false_answer, {"u_id": user.id, "level": user.level}).fetchone()
+    if not result:
+        result = db.execute(sql_query_get_new_question, {"u_id": user.id, "level": user.level}).fetchone()
 
-    # return question with topic name and solution
-    return schemas.Question(id=question.id, level=question.level, topic=topic.name, question=question.question,
-                            solution=solution_class)
+    data = db.execute(sql_query_get_question_data, {"q_id": result[0]}).fetchone()
+
+    solution = schemas.Solution(a=data[3], b=data[4], c=data[5], correct_answer=data[6], explanation=data[7])
+    question = schemas.Question(id=data[0], level=data[1], topic=data[8], question=data[2], solution=solution)
+
+    return question
 
 
 def update_user_level(db: Session, user: schemas.User, increment: int = -1 | 1):
+    """
+    Update user level
+    :param db: database session
+    :param user: schemas.User
+    :param increment:  -1 | 1
+    :return: schemas.User
+    Returns a user with updated level or None if the new level is not in the range 1-10.
+    """
     new_user_level = user.level + increment
     # user level not in range 1-10
     if new_user_level < 1 or new_user_level > 10:
@@ -65,6 +87,15 @@ def update_user_level(db: Session, user: schemas.User, increment: int = -1 | 1):
 
 
 def set_answer(db: Session, user: schemas.User, question_id: int, answer: bool):
+    """
+    Set answer for user_id and question_id
+    :param db: database session
+    :param user: schemas.User
+    :param question_id: int for question_id
+    :param answer: bool for answer
+    :return: schemas.AnsweredQuestion | None
+    Returns a new entry in answered_questions or updates an existing entry.
+    """
     # new entry in answered_questions
     # set answer for user_id and question_id only if user_id and question_id are valid
     question = db.query(models.Question).filter(models.Question.id == question_id).first()

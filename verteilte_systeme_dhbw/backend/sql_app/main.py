@@ -36,10 +36,6 @@ def create_user(db: Session = Depends(get_db)):
 
 @app.get("/question/getQuestion/", response_model=schemas.Question, status_code=status.HTTP_200_OK)
 def get_question(user_id: int, db: Session = Depends(get_db)):
-    # ToDo: check for various error cases -> sent http exception
-    # user_id not found
-    # no more questions for user_id
-    # ...
     user = crud.verify_user(db, user_id)
     if not user:
         raise HTTPException(status_code=404, detail=f"No user with user_id={user_id} found.")
@@ -48,7 +44,8 @@ def get_question(user_id: int, db: Session = Depends(get_db)):
     if question:
         return question
     else:
-        raise HTTPException(status_code=400, detail="Question retrieval failed.")
+        raise HTTPException(status_code=400, detail="Question retrieval failed. All questions in level answered "
+                                                    "correctly?")
 
 
 @app.put("/question/setAnswer/", response_model=schemas.Message, status_code=status.HTTP_200_OK)

@@ -5,7 +5,7 @@
 -- -----------------------------------------------------
 
 -- Tabelle `topic`
-CREATE TABLE IF NOT EXISTS `topic`
+CREATE TABLE IF NOT EXISTS `topics`
 (
     `T_ID` INTEGER PRIMARY KEY,
     `name` TEXT NOT NULL
@@ -59,7 +59,7 @@ CREATE TABLE IF NOT EXISTS `answered_questions`
 
 
 -- Thema `Geographie` in `topic` einfuegen
-INSERT INTO topic (`T_ID`, `name`)
+INSERT INTO topics (`T_ID`, `name`)
 VALUES (1, 'Geographie');
 
 -- Angenommen, `Geographie` erhaelt die `T_ID` 1, fuegen wir Fragen und Loesungen ein
