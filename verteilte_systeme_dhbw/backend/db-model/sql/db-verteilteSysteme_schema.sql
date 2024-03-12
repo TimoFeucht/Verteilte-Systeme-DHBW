@@ -7,14 +7,14 @@
 -- Tabelle `topic`
 CREATE TABLE IF NOT EXISTS `topic`
 (
-    `T-ID` INTEGER PRIMARY KEY,
+    `T_ID` INTEGER PRIMARY KEY,
     `name` TEXT NOT NULL
 );
 
 -- Tabelle `solutions`
 CREATE TABLE IF NOT EXISTS `solutions`
 (
-    `S-ID`           INTEGER PRIMARY KEY,
+    `S_ID`           INTEGER PRIMARY KEY,
     `a`              TEXT NOT NULL,
     `b`              TEXT NOT NULL,
     `c`              TEXT NOT NULL,
@@ -26,20 +26,20 @@ CREATE TABLE IF NOT EXISTS `solutions`
 -- Tabelle `questions`
 CREATE TABLE IF NOT EXISTS `questions`
 (
-    `Q-ID`     INTEGER PRIMARY KEY,
-    `S-ID`     INTEGER NOT NULL,
-    `T-ID`     INTEGER NOT NULL,
+    `Q_ID`     INTEGER PRIMARY KEY,
+    `S_ID`     INTEGER NOT NULL,
+    `T_ID`     INTEGER NOT NULL,
     `level`    INTEGER NOT NULL,
     `question` TEXT    NOT NULL,
     CHECK (`level` >= 1 AND `level` <= 10),
-    FOREIGN KEY (`T-ID`) REFERENCES `topic` (`T-ID`),
-    FOREIGN KEY (`S-ID`) REFERENCES `solutions` (`S-ID`)
+    FOREIGN KEY (`T_ID`) REFERENCES `topic` (`T_ID`),
+    FOREIGN KEY (`S_ID`) REFERENCES `solutions` (`S_ID`)
 );
 
 -- Tabelle `user`
 CREATE TABLE IF NOT EXISTS `user`
 (
-    `U-ID`  INTEGER PRIMARY KEY,
+    `U_ID`  INTEGER PRIMARY KEY,
     `level` INTEGER NOT NULL
         CHECK (`level` >= 1 AND `level` <= 10)
 );
@@ -47,10 +47,12 @@ CREATE TABLE IF NOT EXISTS `user`
 -- Tabelle `answered_questions`
 CREATE TABLE IF NOT EXISTS `answered_questions`
 (
-    `U-ID`   INTEGER NOT NULL,
-    `Q-ID`   INTEGER NOT NULL,
+    `U_ID`   INTEGER NOT NULL,
+    `Q_ID`   INTEGER NOT NULL,
     `answer` BOOLEAN NOT NULL,
-    PRIMARY KEY (`U-ID`, `Q-ID`),
-    FOREIGN KEY (`U-ID`) REFERENCES `user` (`U-ID`),
-    FOREIGN KEY (`Q-ID`) REFERENCES `questions` (`Q-ID`)
+    PRIMARY KEY (`U-ID`, `Q_ID`),
+    CONSTRAINT `U_ID` FOREIGN KEY (`U_ID`) REFERENCES `user` (`U_ID`) ON DELETE CASCADE,
+    CONSTRAINT `Q_ID` FOREIGN KEY (`Q_ID`) REFERENCES `questions` (`Q_ID`) ON DELETE CASCADE
+--     FOREIGN KEY (`U_ID`) REFERENCES `user` (`U_ID`),
+--     FOREIGN KEY (`Q_ID`) REFERENCES `questions` (`Q_ID`)
 );

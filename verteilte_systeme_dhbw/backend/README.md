@@ -10,8 +10,11 @@ rqlited -node-id 1 -http-addr 127.0.0.1:4001 -raft-addr 127.0.0.1:4002 ./db-rqli
 ```bash
 uvicorn sql_app.main:app --reload
 ```
-3. _Optional:_ Have a look at the REST API at `http://127.0.0.1:8000/docs`
-
+3. _Optional for development:_ Have a look at the REST API at [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)
+4. _Optional for development:_ Connect to the cluster via shell to execute SQL commands:
+```bash
+rqlite -H 127.0.0.1 -p 4001
+```
 
 ## Setup - First time
 1. Install Python 3.11.7 (other versions may work as well, but are not tested)
