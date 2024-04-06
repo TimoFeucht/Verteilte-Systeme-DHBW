@@ -15,7 +15,7 @@ RUN poetry install --no-root --no-dev
 # Den gesamten Projektcode in das Verzeichnis '/app' kopieren
 COPY verteilte_systeme_dhbw/backend-rqlite/sql_app .
 
-# Die Umgebungsvariablen (optional) aus einer .mongodb-env Datei setzen
+# Die Umgebungsvariablen (optional) aus einer .env Datei setzen
 # ENV USER=youruser
 # ENV PASSWORD=yourpassword
 
