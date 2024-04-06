@@ -2,13 +2,10 @@ from fastapi import FastAPI, status
 from dotenv import dotenv_values
 from pymongo import MongoClient
 
-# from . import crud, models, schemas
-from . import schemas
 from .question_routes import router as question_router
+from .user_routes import router as user_router
+from . import models
 
-# import models
-# import crud
-# import schemas
 
 config = dotenv_values(".env")
 app = FastAPI()
@@ -27,13 +24,13 @@ async def shutdown_event():
     print("Disconnected from MongoDB.")
 
 
-@app.get("/", response_model=schemas.Message, status_code=status.HTTP_200_OK)
+@app.get("/", response_model=models.Message, status_code=status.HTTP_200_OK)
 def read_root():
-    return schemas.Message(message="Welcome to the Verteilte Systeme API.")
+    return models.Message(message="Welcome to the Verteilte Systeme API.")
 
 
 app.include_router(question_router, tags=["questions"], prefix="/question")
-
+app.include_router(user_router, tags=["users"], prefix="/user")
 #
 #
 # @app.post("/user/connect/", response_model=schemas.User, status_code=status.HTTP_201_CREATED)

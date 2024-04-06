@@ -24,11 +24,11 @@
   "level": 1,
   "answered_questions": [
     {
-      "question": "<ObjectId von Question>",
+      "question_id": "<ObjectId von Question>",
       "answer": true
     },
     {
-      "question": "<ObjectId von Question>",
+      "question_id": "<ObjectId von Question>",
       "answer": false
     }
   ]

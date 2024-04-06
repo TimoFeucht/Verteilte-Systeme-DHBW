@@ -1,17 +1,34 @@
-from fastapi import APIRouter, Body, Request, Response, HTTPException, status
+from fastapi import APIRouter, Request, HTTPException, status
 from fastapi.encoders import jsonable_encoder
-from typing import List
 from . import models
+
+from . import crud
 
 router = APIRouter()
 
 
-@router.get("/random/", response_description="get a random question", status_code=status.HTTP_200_OK, response_model=models.Question)
+@router.get("/getRandom/", response_description="get a random question", status_code=status.HTTP_200_OK,
+            response_model=models.Question)
 def get_random_question(request: Request):
     question = request.app.database["questions"].find_one()
     print("Questions successfully retrieved.")
     print(question)
     return question
+
+
+@router.get("/getQuestion/", response_description="get a question with the user's level",
+            status_code=status.HTTP_200_OK, response_model=models.Question)
+def get_question(request: Request, user_id: str):
+    user = crud.verify_user(request, user_id)
+    if not user:
+        raise HTTPException(status_code=404, detail=f"No user with user_id={user_id} found.")
+
+    question = crud.get_question_for_user_id(request, user)
+    if question:
+        return question
+    else:
+        raise HTTPException(status_code=400, detail="Question retrieval failed. All questions in level answered "
+                                                    "correctly?")
 
 
 @router.post("/create/", response_description="Create a new question", status_code=status.HTTP_201_CREATED,

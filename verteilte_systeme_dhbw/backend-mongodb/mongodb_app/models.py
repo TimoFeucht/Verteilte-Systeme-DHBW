@@ -1,6 +1,18 @@
 import uuid
+from uuid import uuid4
 from typing import Optional
 from pydantic import BaseModel, Field
+
+
+class AnsweredQuestion(BaseModel):
+    question_id: str
+    answer: bool
+
+
+class User(BaseModel):
+    id: str = Field(default_factory=uuid.uuid4, alias="_id")
+    level: int = 1
+    answered_questions: Optional[list[AnsweredQuestion]] = []
 
 
 class Solution(BaseModel):
@@ -40,3 +52,5 @@ class Question(BaseModel):
         }
 
 
+class Message(BaseModel):
+    message: str
