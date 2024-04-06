@@ -1,7 +1,7 @@
 # Distributed Systems Project 
 Containing the parts
 - [Frontend](verteilte_systeme_dhbw/frontend/README.md)
-- [Backend](verteilte_systeme_dhbw/backend/README.md)
+- [Backend](verteilte_systeme_dhbw/backend-rqlite/README.md)
 
 ## Frontend
 The frontend is a simple console application that allows the user to interact with the backend. 

@@ -1,4 +1,4 @@
-# Backend for the distributed systems project _Lernsystem_ at DHBW Stuttgart
+# Backend for the distributed systems project _Lernsystem_ at DHBW Stuttgart with rqlite
 
 ## Start backend
 **If this is the first time you are using this repository, please go to section "Setup - First time".**
