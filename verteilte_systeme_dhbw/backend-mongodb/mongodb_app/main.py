@@ -4,6 +4,8 @@ from pymongo import MongoClient
 
 # from . import crud, models, schemas
 from . import schemas
+from .question_routes import router as question_router
+
 # import models
 # import crud
 # import schemas
@@ -15,7 +17,7 @@ app = FastAPI()
 @app.on_event("startup")
 async def startup_event():
     app.mongodb_client = MongoClient(config["MONGODB_URL"])
-    app.mongodb = app.mongodb_client[config["MONGODB_NAME"]]
+    app.database = app.mongodb_client[config["MONGODB_NAME"]]
     print("Connected to MongoDB.")
 
 
@@ -28,6 +30,9 @@ async def shutdown_event():
 @app.get("/", response_model=schemas.Message, status_code=status.HTTP_200_OK)
 def read_root():
     return schemas.Message(message="Welcome to the Verteilte Systeme API.")
+
+
+app.include_router(question_router, tags=["questions"], prefix="/question")
 
 #
 #
