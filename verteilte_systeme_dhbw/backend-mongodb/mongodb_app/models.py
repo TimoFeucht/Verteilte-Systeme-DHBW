@@ -14,6 +14,20 @@ class User(BaseModel):
     level: int = 1
     answered_questions: Optional[list[AnsweredQuestion]] = []
 
+    class Config:
+        scheme_extra = {
+            "example": {
+                "_id": "661141bf76a678c8895f1585",
+                "level": 1,
+                "answered_questions": [
+                    {
+                        "question_id": "661141bf76a678c8895f1585",
+                        "answer": True
+                    }
+                ]
+            }
+        }
+
 
 class Solution(BaseModel):
     a: str
@@ -21,6 +35,19 @@ class Solution(BaseModel):
     c: str
     correct_answer: str
     explanation: str
+
+    class Config:
+        scheme_extra = {
+            "example": {
+                "a": "5",
+                "b": "6",
+                "c": "7",
+                "correct_answer": "c",
+                "explanation": "Heute gibt es auf der Erde nicht mehr nur einen, sondern insgesamt sieben "
+                               "Kontinente: Nordamerika, Südamerika, Europa, Afrika, Asien, Australien und "
+                               "Antarktika."
+            }
+        }
 
 
 class Question(BaseModel):

@@ -23,12 +23,36 @@ def get_question(request: Request, user_id: str):
     if not user:
         raise HTTPException(status_code=404, detail=f"No user with user_id={user_id} found.")
 
-    question = crud.get_question_for_user_id(request, user)
+    question = crud.get_question_for_user(request, user)
     if question:
         return question
     else:
         raise HTTPException(status_code=400, detail="Question retrieval failed. All questions in level answered "
                                                     "correctly?")
+
+
+@router.put("/setAnswer/", response_description="set answer for a question", status_code=status.HTTP_200_OK,
+            response_model=models.Message)
+def set_answer(request: Request, user_id: str, question_id: str, answer: bool):
+    user = crud.verify_user(request, user_id)
+    if not user:
+        raise HTTPException(status_code=404, detail=f"Answer could not be set. No user with user_id={user_id} found.")
+
+    question = crud.verify_question(request, question_id)
+    if not question:
+        raise HTTPException(status_code=404, detail=f"Answer could not be set. No question with question_id={question_id} found.")
+
+    updated_user = crud.set_answer(request, user, question_id, answer)
+    if updated_user.modified_count == 0:
+        raise HTTPException(status_code=404, detail=f"Answer could not be set.")
+
+    # update user level if answer is correct
+    if answer:
+        user = crud.update_user_level(request, user, 1)
+        if not user:
+            raise HTTPException(status_code=403, detail="User level not in range 1-10.")
+
+    return models.Message(message="Answer set successfully.")
 
 
 @router.post("/create/", response_description="Create a new question", status_code=status.HTTP_201_CREATED,
