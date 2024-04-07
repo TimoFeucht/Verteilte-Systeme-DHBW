@@ -13,7 +13,7 @@ RUN pip install poetry && poetry config virtualenvs.create false
 RUN poetry install --no-root --no-dev
 
 # Den gesamten Projektcode in das Verzeichnis '/app' kopieren
-COPY ./verteilte_systeme_dhbw/backend/sql_app .
+COPY verteilte_systeme_dhbw/backend-rqlite/sql_app .
 
 # Die Umgebungsvariablen (optional) aus einer .env Datei setzen
 # ENV USER=youruser

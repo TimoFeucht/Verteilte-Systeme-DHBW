@@ -1,4 +1,4 @@
-# Backend for the distributed systems project _Lernsystem_ at DHBW Stuttgart
+# Backend for the distributed systems project _Lernsystem_ at DHBW Stuttgart with rqlite
 
 ## Start backend
 **If this is the first time you are using this repository, please go to section "Setup - First time".**
@@ -8,14 +8,14 @@ rqlited -node-id 1 -http-addr 127.0.0.1:4001 -raft-addr 127.0.0.1:4002 ./db-rqli
 ```
 2. Start backend with uvicorn
 ```bash
-uvicorn sql_app.main:app --reload
+uvicorn sql_app.main:app --reload --port 8001
 ```
-3. _Optional for development:_ Have a look at the REST API at [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)
+3. _Optional for development:_ Have a look at the REST API at [http://127.0.0.1:8001/docs](http://127.0.0.1:8001/docs)
 4. _Optional for development:_ Connect to the cluster via shell to execute SQL commands:
 ```bash
 rqlite -H 127.0.0.1 -p 4001
 ```
-The backend now runns on `localhost:8000` and the database on `localhost:4001`.
+The backend now runns on `localhost:8001` and the database on `localhost:4001`.
 
 
 ## Setup - First time
@@ -60,14 +60,14 @@ SELECT question FROM questions
 ```bash
 uvicorn sql_app.main:app --reload
 ```
-The backend now runns on `localhost:8000` and the database on `localhost:4001`.
+The backend now runns on `localhost:8001` and the database on `localhost:4001`.
 
 ## Architecture
 The backend is a REST API as a distributed system written with [FastAPI](https://fastapi.tiangolo.com//) and [Nats](https://nats.io/) that allows the user to interact with the backend.
 The backend is also responsible for the communication with the database.
 The database is a distributed [rqlite](https://rqlite.io/) database.
 
-The backend runns on `localhost:8000` and the database on `localhost:4001`.
+The backend runns on `localhost:8001` and the database on `localhost:4001`.
 
 [//]: # (## Setup - Development with Docker)
 
