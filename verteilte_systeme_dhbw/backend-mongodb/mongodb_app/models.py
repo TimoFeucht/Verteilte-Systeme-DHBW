@@ -6,6 +6,7 @@ from pydantic import BaseModel, Field
 
 class AnsweredQuestion(BaseModel):
     question_id: str
+    level: int
     answer: bool
 
 
@@ -81,3 +82,9 @@ class Question(BaseModel):
 
 class Message(BaseModel):
     message: str
+
+
+class QuestionQuantity(BaseModel):
+    total_questions: int
+    correct_answers: int
+    wrong_answers: int
