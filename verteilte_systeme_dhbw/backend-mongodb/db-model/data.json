@@ -1,0 +1,641 @@
+[
+    {
+        "level": 1,
+        "topic": "geographie",
+        "question": "Welches ist der groesste Kontinent?",
+        "solution": {
+            "a": "Asien",
+            "b": "Europa",
+            "c": "Afrika",
+            "correct_answer": "a",
+            "explanation": "Asien ist der groesste Kontinent sowohl nach Flaeche als auch nach Bevoelkerung."
+        }
+    },
+    {
+        "level": 2,
+        "topic": "geographie",
+        "question": "Welcher ist der laengste Fluss der Erde?",
+        "solution": {
+            "a": "Amazonas",
+            "b": "Nil",
+            "c": "Jangtse",
+            "correct_answer": "b",
+            "explanation": "Der Nil ist mit etwa 6.650 km der laengste Fluss der Erde."
+        }
+    },
+    {
+        "level": 5,
+        "topic": "geographie",
+        "question": "Welches ist der hoechste Berg der Erde?",
+        "solution": {
+            "a": "Mount Everest",
+            "b": "K2",
+            "c": "Zugspitze",
+            "correct_answer": "a",
+            "explanation": "Der Mount Everest ist mit einer Hoehe von 8.848 Metern der hoechste Berg der Erde."
+        }
+    },
+    {
+        "level": 1,
+        "topic": "geographie",
+        "question": "Welches ist das flaechenmaessig groesste Land der Welt?",
+        "solution": {
+            "a": "Russland",
+            "b": "Kanada",
+            "c": "China",
+            "correct_answer": "a",
+            "explanation": "Russland ist das flaechenmaessig groesste Land der Welt."
+        }
+    },
+    {
+        "level": 2,
+        "topic": "geographie",
+        "question": "Wie viele Ozeane gibt es auf der Erde?",
+        "solution": {
+            "a": "5",
+            "b": "4",
+            "c": "3",
+            "correct_answer": "b",
+            "explanation": "Es gibt 4 Ozeane: den Atlantik, den Pazifik, den Indischen Ozean und den Arktischen Ozean."
+        }
+    },
+    {
+        "level": 5,
+        "topic": "geographie",
+        "question": "Welches ist die groesste Wueste der Welt?",
+        "solution": {
+            "a": "Sahara",
+            "b": "Gobi",
+            "c": "Antarktische Wueste",
+            "correct_answer": "c",
+            "explanation": "Die Antarktische Wueste ist die groesste Wueste der Welt."
+        }
+    },
+    {
+        "level": 3,
+        "topic": "geographie",
+        "question": "Welches ist der kleinste unabhaengige Staat der Welt?",
+        "solution": {
+            "a": "Vatikanstadt",
+            "b": "Monaco",
+            "c": "Nauru",
+            "correct_answer": "a",
+            "explanation": "Vatikanstadt ist der kleinste unabhaengige Staat der Welt."
+        }
+    },
+    {
+        "level": 4,
+        "topic": "geographie",
+        "question": "Welches Land ist nach China das bevoelkerungsreichste?",
+        "solution": {
+            "a": "China",
+            "b": "Indien",
+            "c": "USA",
+            "correct_answer": "b",
+            "explanation": "Indien ist nach China das bevoelkerungsreichste Land der Welt."
+        }
+    },
+    {
+        "level": 5,
+        "topic": "geographie",
+        "question": "Durch welche Laender fliesst der laengste Fluss der Erde?",
+        "solution": {
+            "a": "Tansania, Ruanda, Burundi, die Demokratische Republik Kongo, Uganda, Kenia, Äthiopien, Eritrea, Suedsudan, Sudan und Ägypten",
+            "b": "Schweiz, Liechtenstein, Österreich, Deutschland, Frankreich und den Niederlanden",
+            "c": "Peru, Kolumbien und Brasilien",
+            "correct_answer": "a",
+            "explanation": "Der Nil durchfliesst zahlreiche Laender Afrikas und ist bekannt fuer seine historische Bedeutung."
+        }
+    },
+    {
+        "level": 1,
+        "topic": "geographie",
+        "question": "Welcher ist der groesste Ozean der Erde?",
+        "solution": {
+            "a": "Atlantik",
+            "b": "Indischer Ozean",
+            "c": "Pazifik",
+            "correct_answer": "c",
+            "explanation": "Der Pazifik ist der groesste Ozean der Erde."
+        }
+    },
+    {
+        "level": 1,
+        "topic": "geographie",
+        "question": "In welchem Kontinent liegt Ägypten?",
+        "solution": {
+            "a": "Asien",
+            "b": "Afrika",
+            "c": "Europa",
+            "correct_answer": "b",
+            "explanation": "Ägypten liegt in Nordostafrika und ist bekannt für seine antiken Zivilisationen entlang des Nils."
+        }
+    },
+    {
+        "level": 2,
+        "topic": "geographie",
+        "question": "Welcher Fluss ist länger, der Rhein oder die Donau?",
+        "solution": {
+            "a": "Rhein",
+            "b": "Donau",
+            "c": "Beide sind gleich lang",
+            "correct_answer": "b",
+            "explanation": "Die Donau ist mit etwa 2.850 km länger als der Rhein, der etwa 1.232 km lang ist."
+        }
+    },
+    {
+        "level": 3,
+        "topic": "geographie",
+        "question": "Welches Land hat die meisten Inseln?",
+        "solution": {
+            "a": "Griechenland",
+            "b": "Indonesien",
+            "c": "Schweden",
+            "correct_answer": "b",
+            "explanation": "Indonesien hat mit über 17.000 Inseln die höchste Anzahl an Inseln eines Landes."
+        }
+    },
+    {
+        "level": 4,
+        "topic": "geographie",
+        "question": "Was ist der tiefste Punkt der Erde?",
+        "solution": {
+            "a": "Marianengraben",
+            "b": "Totes Meer",
+            "c": "Baikalsee",
+            "correct_answer": "a",
+            "explanation": "Der Marianengraben ist der tiefste bekannte Punkt der Erde mit einer Tiefe von über 11.000 Metern."
+        }
+    },
+    {
+        "level": 1,
+        "topic": "geographie",
+        "question": "Welcher Kontinent ist der kleinste?",
+        "solution": {
+            "a": "Australien",
+            "b": "Antarktika",
+            "c": "Europa",
+            "correct_answer": "a",
+            "explanation": "Australien ist der kleinste Kontinent der Welt."
+        }
+    },
+    {
+        "level": 2,
+        "topic": "geographie",
+        "question": "Welche Stadt ist die Hauptstadt von Kanada?",
+        "solution": {
+            "a": "Toronto",
+            "b": "Montreal",
+            "c": "Ottawa",
+            "correct_answer": "c",
+            "explanation": "Ottawa ist die Hauptstadt Kanadas."
+        }
+    },
+    {
+        "level": 3,
+        "topic": "geographie",
+        "question": "Welches Gebirge ist das längste der Welt?",
+        "solution": {
+            "a": "Anden",
+            "b": "Himalaya",
+            "c": "Rocky Mountains",
+            "correct_answer": "a",
+            "explanation": "Die Anden sind mit einer Länge von etwa 7.000 km das längste Gebirge der Welt."
+        }
+    },
+    {
+        "level": 4,
+        "topic": "geographie",
+        "question": "In welchem Land liegt der Viktoriasee?",
+        "solution": {
+            "a": "Tansania",
+            "b": "Kenia",
+            "c": "Beide und mehr",
+            "correct_answer": "c",
+            "explanation": "Der Viktoriasee liegt in Tansania, Kenia und Uganda."
+        }
+    },
+    {
+        "level": 5,
+        "topic": "geographie",
+        "question": "Welches Land grenzt nicht an Brasilien?",
+        "solution": {
+            "a": "Chile",
+            "b": "Bolivien",
+            "c": "Peru",
+            "correct_answer": "a",
+            "explanation": "Chile grenzt nicht an Brasilien, während Bolivien und Peru es tun."
+        }
+    },
+    {
+        "level": 1,
+        "topic": "geographie",
+        "question": "Welches ist die größte Stadt Europas nach Einwohnerzahl?",
+        "solution": {
+            "a": "London",
+            "b": "Moskau",
+            "c": "Berlin",
+            "correct_answer": "b",
+            "explanation": "Moskau ist mit einer Einwohnerzahl von über 12 Millionen Menschen die größte Stadt Europas."
+        }
+    },
+    {
+        "level": 1,
+        "topic": "astronomie",
+        "question": "Welcher Planet ist unserem Sonnensystem am nächsten?",
+        "solution": {
+            "a": "Merkur",
+            "b": "Venus",
+            "c": "Mars",
+            "correct_answer": "a",
+            "explanation": "Merkur ist der Sonne am nächsten gelegene Planet in unserem Sonnensystem."
+        }
+    },
+    {
+        "level": 2,
+        "topic": "astronomie",
+        "question": "Welcher Planet ist als der Rote Planet bekannt?",
+        "solution": {
+            "a": "Mars",
+            "b": "Jupiter",
+            "c": "Saturn",
+            "correct_answer": "a",
+            "explanation": "Mars ist wegen seiner rötlichen Färbung, die durch Eisenoxid auf seiner Oberfläche verursacht wird, als der Rote Planet bekannt."
+        }
+    },
+    {
+        "level": 3,
+        "topic": "astronomie",
+        "question": "Was ist eine Supernova?",
+        "solution": {
+            "a": "Ein neu entdeckter Stern",
+            "b": "Die Explosion eines Sterns am Ende seines Lebens",
+            "c": "Ein sehr heller Komet",
+            "correct_answer": "b",
+            "explanation": "Eine Supernova ist die explosive Endphase im Leben eines Sterns, bei der der Stern einen Großteil seiner Masse in einer gewaltigen Explosion freisetzt."
+        }
+    },
+    {
+        "level": 4,
+        "topic": "astronomie",
+        "question": "Welcher ist der größte Planet in unserem Sonnensystem?",
+        "solution": {
+            "a": "Neptun",
+            "b": "Saturn",
+            "c": "Jupiter",
+            "correct_answer": "c",
+            "explanation": "Jupiter ist der größte Planet in unserem Sonnensystem."
+        }
+    },
+    {
+        "level": 1,
+        "topic": "astronomie",
+        "question": "Wie viele Monde hat der Planet Jupiter?",
+        "solution": {
+            "a": "4",
+            "b": "Über 50",
+            "c": "12",
+            "correct_answer": "b",
+            "explanation": "Jupiter hat über 50 bekannte Monde, wobei ständig neue entdeckt werden."
+        }
+    },
+    {
+        "level": 2,
+        "topic": "astronomie",
+        "question": "Was ist der Asteroidengürtel?",
+        "solution": {
+            "a": "Ein Ring aus Gas um Saturn",
+            "b": "Eine Region voller Asteroiden zwischen den Umlaufbahnen von Mars und Jupiter",
+            "c": "Ein neuer Planet am Rande unseres Sonnensystems",
+            "correct_answer": "b",
+            "explanation": "Der Asteroidengürtel ist eine Region des Sonnensystems, die sich zwischen den Umlaufbahnen von Mars und Jupiter befindet und Millionen von Asteroiden enthält."
+        }
+    },
+    {
+        "level": 3,
+        "topic": "astronomie",
+        "question": "Was ist ein Lichtjahr?",
+        "solution": {
+            "a": "Die Zeit, die Licht benötigt, um in einem Jahr zu reisen",
+            "b": "Die Entfernung, die Licht in einem Jahr zurücklegt",
+            "c": "Eine Maßeinheit für die Helligkeit von Sternen",
+            "correct_answer": "b",
+            "explanation": "Ein Lichtjahr ist die Entfernung, die Licht in einem Jahr zurücklegt, und wird verwendet, um Entfernungen im Universum zu messen."
+        }
+    },
+    {
+        "level": 4,
+        "topic": "astronomie",
+        "question": "Welche Galaxie ist unsere Heimatgalaxie?",
+        "solution": {
+            "a": "Andromeda-Galaxie",
+            "b": "Milchstraße",
+            "c": "Sombrero-Galaxie",
+            "correct_answer": "b",
+            "explanation": "Die Milchstraße ist unsere Heimatgalaxie, ein gigantisches Sternsystem, das die Sonne und die Erde enthält."
+        }
+    },
+    {
+        "level": 5,
+        "topic": "astronomie",
+        "question": "Was ist das Hubble-Weltraumteleskop?",
+        "solution": {
+            "a": "Ein Teleskop auf einem Berg in Hawaii",
+            "b": "Ein Weltraumteleskop, das um die Erde kreist",
+            "c": "Das größte Teleskop in der Wüste von Chile",
+            "correct_answer": "b",
+            "explanation": "Das Hubble-Weltraumteleskop ist ein Weltraumteleskop, das seit 1990 um die Erde kreist und Astronomen hilft, das Universum zu erforschen."
+        }
+    },
+    {
+        "level": 1,
+        "topic": "astronomie",
+        "question": "Was verursacht eine Sonnenfinsternis?",
+        "solution": {
+            "a": "Der Mond steht zwischen der Erde und der Sonne und blockiert das Sonnenlicht.",
+            "b": "Die Erde steht zwischen der Sonne und dem Mond.",
+            "c": "Mehrere Planeten stehen in einer Linie.",
+            "correct_answer": "a",
+            "explanation": "Eine Sonnenfinsternis tritt auf, wenn der Mond zwischen die Erde und die Sonne tritt und das Sonnenlicht blockiert."
+        }
+    },
+    {
+        "level": 2,
+        "topic": "astronomie",
+        "question": "Was ist ein Schwarzes Loch?",
+        "solution": {
+            "a": "Ein Bereich im Weltraum ohne Sterne",
+            "b": "Ein Bereich im Weltraum mit extrem hoher Schwerkraft, aus dem nichts entkommen kann",
+            "c": "Ein Bereich im Weltraum mit extrem niedriger Schwerkraft",
+            "correct_answer": "b",
+            "explanation": "Ein Schwarzes Loch ist ein Bereich im Weltraum mit extrem hoher Schwerkraft, aus dem nichts, nicht einmal Licht, entkommen kann."
+        }
+    },
+    {
+        "level": 3,
+        "topic": "astronomie",
+        "question": "Was ist ein Komet?",
+        "solution": {
+            "a": "Ein kleiner Planet",
+            "b": "Ein Stern mit Schweif",
+            "c": "Ein kleiner Himmelskörper aus Eis und Staub, der um die Sonne kreist",
+            "correct_answer": "c",
+            "explanation": "Ein Komet ist ein kleiner Himmelskörper aus Eis und Staub, der um die Sonne kreist und einen Schweif aus Gas und Staub bildet, wenn er sich der Sonne nähert."
+        }
+    },
+    {
+        "level": 4,
+        "topic": "astronomie",
+        "question": "Was ist ein Planetoid?",
+        "solution": {
+            "a": "Ein kleiner Planet",
+            "b": "Ein Mond eines Planeten",
+            "c": "Ein Stern",
+            "correct_answer": "a",
+            "explanation": "Ein Planetoid ist ein kleiner Himmelskörper, der sich wie ein Planet um die Sonne bewegt, aber nicht groß genug ist, um als Planet klassifiziert zu werden."
+        }
+    },
+    {
+        "level": 1,
+        "topic": "biology",
+        "question": "Was ist Photosynthese?",
+        "solution": {
+            "a": "Der Prozess, durch den Tiere Sauerstoff verbrauchen.",
+            "b": "Der Prozess, durch den Pflanzen Glucose und Sauerstoff erzeugen.",
+            "c": "Der Prozess, durch den Pflanzen Kohlendioxid aus der Atmosphäre entfernen.",
+            "correct_answer": "b",
+            "explanation": "Photosynthese ist der Prozess, durch den Pflanzen unter Verwendung von Lichtenergie Glucose aus Kohlendioxid und Wasser herstellen und dabei Sauerstoff freisetzen."
+        }
+    },
+    {
+        "level": 2,
+        "topic": "biology",
+        "question": "Was sind Mitochondrien?",
+        "solution": {
+            "a": "Die Strukturen in einer Zelle, die für die Photosynthese verantwortlich sind.",
+            "b": "Die Strukturen in einer Zelle, die Proteine herstellen.",
+            "c": "Die Strukturen in einer Zelle, die Energie in Form von ATP produzieren.",
+            "correct_answer": "c",
+            "explanation": "Mitochondrien sind Organellen in Zellen, die als Kraftwerke der Zelle fungieren und Energie in Form von ATP produzieren."
+        }
+    },
+    {
+        "level": 3,
+        "topic": "biology",
+        "question": "Was ist die DNA?",
+        "solution": {
+            "a": "Ein Energieübertragungsmolekül.",
+            "b": "Das Molekül, das die genetischen Anweisungen eines Organismus trägt.",
+            "c": "Ein Typ von Protein in Muskelzellen.",
+            "correct_answer": "b",
+            "explanation": "DNA ist das Molekül, das die genetischen Anweisungen für die Entwicklung, das Funktionieren, das Wachstum und die Reproduktion aller bekannten lebenden Organismen und vieler Viren trägt."
+        }
+    },
+    {
+        "level": 4,
+        "topic": "biology",
+        "question": "Was ist eine Zellmembran?",
+        "solution": {
+            "a": "Die starre Außenschicht einer Pflanzenzelle, die für Stabilität sorgt.",
+            "b": "Eine durchlässige Schicht, die eine Zelle umgibt und den Ein- und Austritt von Stoffen kontrolliert.",
+            "c": "Das Material innerhalb der Zelle, das die Organellen enthält.",
+            "correct_answer": "b",
+            "explanation": "Die Zellmembran ist eine selektiv durchlässige Membran, die eine Zelle umgibt und den Ein- und Austritt von Stoffen in die und aus der Zelle regelt."
+        }
+    },
+    {
+        "level": 1,
+        "topic": "biology",
+        "question": "Was ist Evolution?",
+        "solution": {
+            "a": "Die Anpassung von Organismen an das Leben im Wasser.",
+            "b": "Der Prozess, durch den neue Arten durch genetische Veränderungen entstehen.",
+            "c": "Die Veränderung der Eigenschaften von Steinen über Zeit.",
+            "correct_answer": "b",
+            "explanation": "Evolution ist der Prozess, durch den im Laufe der Generationen Änderungen in den genetischen Merkmalen von Populationen auftreten, was zur Entstehung neuer Arten führen kann."
+        }
+    },
+    {
+        "level": 2,
+        "topic": "biology",
+        "question": "Was sind Proteine?",
+        "solution": {
+            "a": "Einfache Zucker, die die Hauptenergiequelle für Zellen sind.",
+            "b": "Moleküle, die Zellstrukturen bilden und als Enzyme fungieren.",
+            "c": "Fette, die in Zellmembranen gefunden werden.",
+            "correct_answer": "b",
+            "explanation": "Proteine sind große Moleküle, die eine Vielzahl von Funktionen in Organismen ausüben, einschließlich des Aufbaus von Zellstrukturen und des Handelns als Enzyme."
+        }
+    },
+    {
+        "level": 3,
+        "topic": "biology",
+        "question": "Was ist ein Ökosystem?",
+        "solution": {
+            "a": "Eine Sammlung von Pflanzenarten in einem bestimmten Gebiet.",
+            "b": "Ein geschlossenes System in Laboratorien zur Untersuchung von Pflanzenwachstum.",
+            "c": "Eine Gemeinschaft von lebenden Organismen und ihre Wechselwirkung mit ihrer abiotischen Umgebung.",
+            "correct_answer": "c",
+            "explanation": "Ein Ökosystem umfasst alle lebenden Organismen in einem Gebiet sowie ihre physische Umgebung und wie sie miteinander und mit der Umgebung interagieren."
+        }
+    },
+    {
+        "level": 4,
+        "topic": "biology",
+        "question": "Was beschreibt das Gesetz der Segregation?",
+        "solution": {
+            "a": "Die Trennung von Kontinenten im Laufe der Erdgeschichte.",
+            "b": "Die Aufteilung von homologen Chromosomen während der Meiose.",
+            "c": "Die Verteilung von Energie in einem Ökosystem.",
+            "correct_answer": "b",
+            "explanation": "Das Gesetz der Segregation, eines der Mendelschen Gesetze, beschreibt, wie Paare von Genen (Allele) während der Meiose getrennt und zufällig auf die Gameten verteilt werden."
+        }
+    },
+    {
+        "level": 5,
+        "topic": "biology",
+        "question": "Was ist Gentechnik?",
+        "solution": {
+            "a": "Die Untersuchung von Genen und ihrer Funktion.",
+            "b": "Die Verwendung von chemischen Reaktionen, um Gene zu studieren.",
+            "c": "Das direkte Manipulieren von Genen innerhalb eines Organismus.",
+            "correct_answer": "c",
+            "explanation": "Gentechnik bezieht sich auf die Technologien, die verwendet werden, um das genetische Material eines Organismus zu verändern und neue Eigenschaften einzuführen oder bestehende zu ändern."
+        }
+    },
+    {
+        "level": 1,
+        "topic": "biology",
+        "question": "Was ist der Hauptzweck der Zellatmung?",
+        "solution": {
+            "a": "Die Produktion von Sauerstoff.",
+            "b": "Die Umwandlung von Glucose in ATP.",
+            "c": "Die Erzeugung von Kohlendioxid für die Photosynthese.",
+            "correct_answer": "b",
+            "explanation": "Der Hauptzweck der Zellatmung ist die Umwandlung der in Glucose gespeicherten Energie in ATP, die Zellen als Energiequelle nutzen."
+        }
+    },
+    {
+        "level": 1,
+        "topic": "physics",
+        "question": "Was misst ein Amperemeter?",
+        "solution": {
+            "a": "Spannung",
+            "b": "Stromstärke",
+            "c": "Widerstand",
+            "correct_answer": "b",
+            "explanation": "Ein Amperemeter misst die Stromstärke in einem elektrischen Stromkreis."
+        }
+    },
+    {
+        "level": 2,
+        "topic": "physics",
+        "question": "Was ist die Lichtgeschwindigkeit im Vakuum?",
+        "solution": {
+            "a": "Etwa 300.000 km/s",
+            "b": "Etwa 150.000 km/s",
+            "c": "Etwa 1.000.000 km/s",
+            "correct_answer": "a",
+            "explanation": "Die Lichtgeschwindigkeit im Vakuum beträgt etwa 300.000 Kilometer pro Sekunde."
+        }
+    },
+    {
+        "level": 3,
+        "topic": "physics",
+        "question": "Was beschreibt das Ohmsche Gesetz?",
+        "solution": {
+            "a": "Die Beziehung zwischen Strom und Spannung in einem idealen Kondensator.",
+            "b": "Die Beziehung zwischen magnetischer Flussdichte und elektrischem Strom.",
+            "c": "Die Beziehung zwischen Stromstärke, Spannung und Widerstand.",
+            "correct_answer": "c",
+            "explanation": "Das Ohmsche Gesetz beschreibt die Proportionalität zwischen Spannung, Stromstärke und Widerstand in einem elektrischen Stromkreis."
+        }
+    },
+    {
+        "level": 4,
+        "topic": "physics",
+        "question": "Was ist ein Photon?",
+        "solution": {
+            "a": "Ein Teilchen, das die Schwerkraft überträgt.",
+            "b": "Ein Teilchen, das Licht und andere elektromagnetische Strahlung überträgt.",
+            "c": "Ein Teilchen, das für die Kernfusion in Sternen verantwortlich ist.",
+            "correct_answer": "b",
+            "explanation": "Ein Photon ist ein elementares Teilchen, das als Quant der elektromagnetischen Strahlung, einschließlich Licht, dient."
+        }
+    },
+    {
+        "level": 1,
+        "topic": "physics",
+        "question": "Was ist die Einheit der Kraft?",
+        "solution": {
+            "a": "Joule",
+            "b": "Newton",
+            "c": "Watt",
+            "correct_answer": "b",
+            "explanation": "Die Einheit der Kraft im Internationalen Einheitensystem (SI) ist das Newton."
+        }
+    },
+    {
+        "level": 2,
+        "topic": "physics",
+        "question": "Was beschreibt die kinetische Energie?",
+        "solution": {
+            "a": "Die Energie, die ein Körper durch seine Bewegung besitzt.",
+            "b": "Die Energie, die ein Körper durch seine Position besitzt.",
+            "c": "Die Energie, die ein Körper durch seine Temperatur besitzt.",
+            "correct_answer": "a",
+            "explanation": "Die kinetische Energie ist die Energie, die ein Objekt aufgrund seiner Bewegung besitzt."
+        }
+    },
+    {
+        "level": 3,
+        "topic": "physics",
+        "question": "Was ist ein schwarzes Loch?",
+        "solution": {
+            "a": "Ein Bereich im Weltraum, aus dem Licht nicht entkommen kann, weil die Gravitation zu stark ist.",
+            "b": "Ein neugeborener Stern.",
+            "c": "Ein dunkler Bereich im Universum, der keine Sterne enthält.",
+            "correct_answer": "a",
+            "explanation": "Ein schwarzes Loch ist ein Bereich im Raum, dessen Gravitationsfeld so stark ist, dass nichts, nicht einmal Licht, entkommen kann."
+        }
+    },
+    {
+        "level": 4,
+        "topic": "physics",
+        "question": "Was versteht man unter der Quantenmechanik?",
+        "solution": {
+            "a": "Die Wissenschaft von sehr großen Objekten, wie Planeten und Sternen.",
+            "b": "Die Wissenschaft von den Bewegungsgesetzen und Kräften im Universum.",
+            "c": "Die Wissenschaft, die das Verhalten von Materie und Energie auf der Ebene von Atomen und subatomaren Teilchen beschreibt.",
+            "correct_answer": "c",
+            "explanation": "Die Quantenmechanik ist der Teil der Physik, der das Verhalten von Materie und Energie auf der Ebene von Atomen und subatomaren Teilchen beschreibt."
+        }
+    },
+    {
+        "level": 5,
+        "topic": "physics",
+        "question": "Was ist die Relativitätstheorie?",
+        "solution": {
+            "a": "Eine Theorie, die das Verhalten von Gasen bei hohen Temperaturen beschreibt.",
+            "b": "Eine Theorie, die die Struktur des Atomkerns erklärt.",
+            "c": "Eine Theorie von Albert Einstein, die die Beziehung zwischen Raum, Zeit und Gravitation beschreibt.",
+            "correct_answer": "c",
+            "explanation": "Die Relativitätstheorie ist eine von Albert Einstein entwickelte Theorie, die grundlegende Konzepte von Raum, Zeit und Gravitation neu definiert."
+        }
+    },
+    {
+        "level": 1,
+        "topic": "physics",
+        "question": "Wovon hängt die Schwingungsdauer eines Pendels ab?",
+        "solution": {
+            "a": "Von der Masse des Pendelkörpers",
+            "b": "Von der Stärke der Gravitation",
+            "c": "Von der Länge des Pendelfadens",
+            "correct_answer": "c",
+            "explanation": "Die Schwingungsdauer eines Pendels hängt hauptsächlich von der Länge des Pendelfadens ab."
+        }
+    }
+]
+
+
+

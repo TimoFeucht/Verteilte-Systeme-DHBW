@@ -55,31 +55,30 @@ def set_answer(request: Request, user_id: str, question_id: str, answer: bool):
     return models.Message(message="Answer set successfully.")
 
 
-@router.post("/create/", response_description="Create a new question", status_code=status.HTTP_201_CREATED,
-             response_model=models.Question)
-def create_new_question(request: Request):
-    test_question = {
-        "level": 2,
-        "topic": "geographie",
-        "question": "Wie viele Kontinente hat die Erde?",
-        "solution": {
-            "a": "5",
-            "b": "6",
-            "c": "7",
-            "correct_answer": "c",
-            "explanation": "Heute gibt es auf der Erde nicht mehr nur einen, sondern insgesamt sieben "
-                           "Kontinente: Nordamerika, Südamerika, Europa, Afrika, Asien, Australien und "
-                           "Antarktika."
-        }
-    }
-    # convert test_question to model.Question
-    question = models.Question(**test_question)
-    print(question)
-    question = jsonable_encoder(question)
-    print(question)
-    new_question = request.app.database["questions"].insert_one(question)
-    created_question = request.app.database["questions"].find_one(
-        {"_id": new_question.inserted_id}
-    )
-
-    return created_question
+# @router.post("/create/", response_description="Create a new questions", status_code=status.HTTP_201_CREATED,
+#              response_model=models.Question)
+# def create_new_question(request: Request):
+#     test_question = {
+#         "level": 2,
+#         "topic": "geographie",
+#         "question": "Wie viele Kontinente hat die Erde?",
+#         "solution": {
+#             "a": "5",
+#             "b": "6",
+#             "c": "7",
+#             "correct_answer": "c",
+#             "explanation": "Heute gibt es auf der Erde nicht mehr nur einen, sondern insgesamt sieben "
+#                            "Kontinente: Nordamerika, Südamerika, Europa, Afrika, Asien, Australien und "
+#                            "Antarktika."
+#         }
+#     }
+#     # convert test_question to model.Question
+#     question = models.Question(**test_question)
+#     question = jsonable_encoder(question)
+#
+#     new_question = request.app.database["questions"].insert_one(question)
+#     created_question = request.app.database["questions"].find_one(
+#         {"_id": new_question.inserted_id}
+#     )
+#
+#     return created_question
