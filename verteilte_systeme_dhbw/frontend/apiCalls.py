@@ -1,6 +1,5 @@
 import requests
 
-
 # Doku: http://127.0.0.1:8000/docs#/
 class apiCalls:
     connect_user_url = 'http://127.0.0.1:8000/user/connect/'
