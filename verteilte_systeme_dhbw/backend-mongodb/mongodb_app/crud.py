@@ -2,7 +2,6 @@ import uuid
 
 from fastapi import Request
 from fastapi.encoders import jsonable_encoder
-from sqlalchemy import text, select
 
 from . import models
 

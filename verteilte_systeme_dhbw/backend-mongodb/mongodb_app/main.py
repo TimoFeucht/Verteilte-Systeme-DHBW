@@ -6,7 +6,6 @@ from .question_routes import router as question_router
 from .user_routes import router as user_router
 from . import models
 
-
 config = dotenv_values(".env")
 app = FastAPI()
 
@@ -15,6 +14,8 @@ app = FastAPI()
 async def startup_event():
     app.mongodb_client = MongoClient(config["MONGODB_URL"])
     app.database = app.mongodb_client[config["MONGODB_NAME"]]
+    # app.mongodb_client = MongoClient("")
+    # app.database = app.mongodb_client[""]
     print("Connected to MongoDB.")
 
 
