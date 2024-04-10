@@ -32,8 +32,8 @@ def read_root():
 
 app.include_router(question_router, tags=["questions"], prefix="/question")
 app.include_router(user_router, tags=["users"], prefix="/user")
-#
-#
+
+
 # @app.post("/user/connect/", response_model=schemas.User, status_code=status.HTTP_201_CREATED)
 # def create_user(db: Session = Depends(get_db)):
 #     new_user = crud.create_new_user(db)

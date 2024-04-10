@@ -5,5 +5,9 @@
 ```bash
 python -m uvicorn mongodb_app.main:app --reload
 ```
+OR
+1. Start backend from file `start_backend.py`
+
+
 2. _Optional for development:_ Have a look at the REST API at [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)
 

@@ -1,0 +1,13 @@
+# See tutorial https://medium.com/@benmorel/creating-a-linux-service-with-systemd-611b5c8b91d6
+[Unit]
+Description=ROT13 demo service
+After=network.target
+StartLimitIntervalSec=0[Service]
+Type=simple
+Restart=always
+RestartSec=1
+User=centos
+ExecStart=/usr/bin/env php /path/to/server.php
+
+[Install]
+WantedBy=multi-user.target
