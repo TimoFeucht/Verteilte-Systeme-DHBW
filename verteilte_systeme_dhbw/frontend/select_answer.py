@@ -9,7 +9,7 @@ def start_game():
     user = User()
 
     # fetch user_id and level from the server
-    user.user_id = api.connect_user()['id']
+    user.user_id = api.connect_user()['_id']
     user.level = api.get_level(user.user_id)['level']
 
     # clear the console
@@ -23,7 +23,7 @@ def start_game():
         print("********************************************************************************")
         print("Your current level is: " + str(user.level['level']) + "        Correct answers: " + "        Wrong answers: ")
         print("********************************************************************************")
-
+        # Todo add correct answer counter api call
         # get question from the server
         question = api.get_question(user.user_id)
         print("\n\n")
@@ -53,11 +53,11 @@ def start_game():
         # check if answer is correct
         if user_answer == correct_answer:
             print("Correct!")
-            api.set_answer(user.user_id, question['id'], True)
+            api.set_answer(user.user_id, question['_id'], True)
 
         elif user_answer != correct_answer:
             print("False!")
-            api.set_answer(user.user_id, question['id'], False)
+            api.set_answer(user.user_id, question['_id'], False)
 
         user_input = input("Press Q to quit, L to adjust your level or any other key to continue... ")
 

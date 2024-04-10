@@ -2,8 +2,6 @@ import requests
 from select_answer import *
 import os
 
-
-
 while True:
     # menu for user
     print("\n")
@@ -22,21 +20,15 @@ while True:
 
         user_input = input("Press S (Start) or Q(Quit)")
 
-        if user_input == "S":
+        if user_input == "S" or user_input == "s":
             # clear the console
             print("\n" * 100)
             os.system('cls' if os.name == 'nt' else 'clear')
             start_game()
 
-        elif user_input == "Q":
+        elif user_input == "Q" or user_input == "q":
             print("Goodbye!")
             exit()
         else:
             print("Please enter a valid input!")
             continue
-
-
-
-
-
-
