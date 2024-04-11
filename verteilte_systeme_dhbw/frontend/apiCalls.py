@@ -2,6 +2,11 @@ import requests
 
 # Doku: http://127.0.0.1:8000/docs#/
 class apiCalls:
+    base_url='http://127.0.0.1:8000'
+    base_url1 = 'http://192.180.65'
+    base_url2 = 'http://192.180.66'
+    base_url3= 'http://192.180.67'
+    # ToDo: Round Robin with ip's for load balancing
     connect_user_url = 'http://127.0.0.1:8000/user/connect/'
     get_question_url = 'http://127.0.0.1:8000/question/getQuestion/'
     set_answer_url = 'http://127.0.0.1:8000/question/setAnswer/'
