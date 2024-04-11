@@ -1,11 +1,16 @@
 # See tutorial https://medium.com/@benmorel/creating-a-linux-service-with-systemd-611b5c8b91d6
-# 1) create a file called /etc/systemd/system/lernsystem.service
+# 1) create a file called cd /etc/systemd/system/lernsystem.service
 # 2) copy and past this script into file lernsystem.service
 # 3) Start service with "$ systemctl start lernsystem"
+#    Stop service with "$ systemctl stop lernsystem"
 # 4) Start service automatically on boot "$ systemctl enable lernsystem"
+#    Disable service on boot "$ systemctl disable lernsystem"
+
+# Check status of service "$ systemctl status lernsystem"
+# Restart service "$ systemctl deamon-reload" and "$ systemctl restart lernsystem"
 
 [Unit]
-Description=lernsystem service
+Description=lernsystem
 StartLimitIntervalSec=0
 
 [Service]
@@ -14,7 +19,7 @@ Restart=always
 RestartSec=1
 User=pi
 WorkingDirectory=/home/pi/studienprojekte/Verteilte-Systeme-DHBW
-ExecStart=/usr/bin/python3 /verteilte_systeme_dhbw/backend-mongodb/start_backend.py
+ExecStart=/usr/bin/python3 /home/pi/studienprojekte/Verteilte-Systeme-DHBW/verteilte_systeme_dhbw/backend-mongodb/start_backend.py
 
 [Install]
 WantedBy=multi-user.target

@@ -11,6 +11,10 @@ You can have a look at the REST API at [http://127.0.0.1:8000/docs](http://127.0
 
 ## Start backend on Raspberry Pi
 The backend on the Raspberry Pi is started via a service ([lernsysteme.service](lernsystem.service)) and should therefor start and run automatically.
+You can check the status of the service with the following command in the terminal on the Raspberry Pi:
+```bash
+sudo systemctl status lernsysteme
+```
 If the backend doesn't start, you can start the backend via uvicorn or run the file [start_backend.py](start_backend.py).
 If you want to start the backend via uvicorn on the Raspberry Pi, please use the following command:
 ```bash
