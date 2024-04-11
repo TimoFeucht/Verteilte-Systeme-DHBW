@@ -13,8 +13,7 @@ Type=simple
 Restart=always
 RestartSec=1
 User=pi
-# ToDo: Check if path is correct
-WorkingDirectory=/home/pi/studienprojekte/verteilte-systeme-dhbw
+WorkingDirectory=/home/pi/studienprojekte/Verteilte-Systeme-DHBW
 ExecStart=/usr/bin/python3 /verteilte_systeme_dhbw/backend-mongodb/start_backend.py
 
 [Install]
