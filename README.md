@@ -19,18 +19,20 @@ The database is a distributed [rqlite](https://rqlite.io/) database or a [MongoD
 ****
 
 # Setting up the project
-## Backend
-The backend on the Raspberry Pi is started via a service ([lernsysteme.service](verteilte_systeme_dhbw/backend-mongodb/lernsystem.service)) and should therefor start and run automatically.
-The login credentials for the MongoDB-Cluster are already saved on the Raspberry Pi.
-
-If the backend doesn't start or you want to run the backend locally, follow the steps in the README for the [Backend with MongoDB](verteilte_systeme_dhbw/backend-mongodb/README.md).
-
-If clone this project, create your own cluster with [MongoDB Atlas](https://www.mongodb.com/atlas/database) and past the login-credentials into a file named `.env` located in `verteilte_systeme_dhbw/backend-mongodb/`.
+## Prerequisites
+- **Packages:** The packeges are already installed on the Raspberry Pi. If you clone this project, install the packeges via [requirements.txt](requirements.txt) or with [Poetry](https://python-poetry.org/docs/cli/) (`poetry install`).
+- **MongoDB-Cluster:** The login credentials for the database are saved on the Raspberry Pi. If you clone this project, create your own cluster with [MongoDB Atlas](https://www.mongodb.com/atlas/database) and past the login-credentials into a file named `.env` located in `verteilte_systeme_dhbw/backend-mongodb/`.
 Set the following variables to your own login credentials:
 ````
 MONGODB_URL=mongodb+srv://[username:password@]host[/[defaultauthdb][?options]]
 MONGODB_NAME=[db_name]
 ````
 
+## Backend
+The backend on the Raspberry Pi is started via a service ([lernsysteme.service](verteilte_systeme_dhbw/backend-mongodb/lernsystem.service)) and should therefor start and run automatically.
+The login credentials for the MongoDB-Cluster are already saved on the Raspberry Pi.
+
+If the backend doesn't start or you want to run the backend locally, follow the steps in the README for the [Backend with MongoDB](verteilte_systeme_dhbw/backend-mongodb/README.md).
+
 ## Frontend
-**TODO: Write steps**
+[Frontend](verteilte_systeme_dhbw/frontend/README.md)
