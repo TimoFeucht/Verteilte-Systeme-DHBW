@@ -18,6 +18,6 @@ if __name__ == "__main__":
 #     # use host="127.0.0.1" for local development#
 #     get_ip_command = "hostname -I | awk '{print $1}'"
 #     host_ip = subprocess.check_output(get_ip_command, shell=True).decode().strip()
-#     uvicorn_command = f"uvicorn mongodb_app.main:app --reload --port 9000 --host {host_ip}"
+#     uvicorn_command = f"uvicorn mongodb_app.main:app --reload --host {host_ip} --port 9000"
 #
 #     subprocess.run(uvicorn_command, shell=True, check=True)
