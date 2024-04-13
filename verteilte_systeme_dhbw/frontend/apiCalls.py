@@ -26,7 +26,7 @@ class apiCalls:
         self.get_question_url = self.base_url + 'question/getQuestion/'
         self.set_answer_url = self.base_url + 'question/setAnswer/'
         self.update_level_url = self.base_url + 'user/level/update/'
-        self.get_level_url = self.base_url + 'user/level/get'
+        self.get_level_url = self.base_url + 'user/level/get/'
         self.delete_user_url = self.base_url + 'user/delete/'
 
     def try_request(self, method, url_suffix, **kwargs):
@@ -59,7 +59,7 @@ class apiCalls:
         return self.try_request('put', 'user/level/update/', params={'user_id': user_id, 'level_adjustment': level_adjustment})
 
     def get_level(self, user_id):
-        return self.try_request('get', 'user/level/get', params={'user_id': user_id})
+        return self.try_request('get', 'user/level/get/', params={'user_id': user_id})
 
     def delete_user(self, user_id):
         return self.try_request('delete', 'user/delete/', params={'user_id': user_id})

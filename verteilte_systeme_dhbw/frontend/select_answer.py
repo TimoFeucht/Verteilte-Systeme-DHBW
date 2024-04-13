@@ -10,7 +10,7 @@ def start_game():
 
     # fetch user_id and level from the server
     user.user_id = api.connect_user()['_id']
-    user.level = api.get_level(user.user_id)['level']
+
 
     # clear the console
     os.system('cls' if os.name == 'nt' else 'clear')
