@@ -18,7 +18,7 @@ Type=simple
 Restart=always
 RestartSec=1
 User=pi
-WorkingDirectory=/home/pi/studienprojekte/Verteilte-Systeme-DHBW
+WorkingDirectory=/home/pi/studienprojekte/Verteilte-Systeme-DHBW/backend-mongodb
 ExecStart=/usr/bin/python3 /home/pi/studienprojekte/Verteilte-Systeme-DHBW/verteilte_systeme_dhbw/backend-mongodb/start_backend.py
 
 [Install]
