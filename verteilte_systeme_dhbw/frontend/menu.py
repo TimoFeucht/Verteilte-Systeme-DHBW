@@ -1,4 +1,3 @@
-import requests
 from select_answer import *
 import os
 
