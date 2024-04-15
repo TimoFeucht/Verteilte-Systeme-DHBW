@@ -33,7 +33,7 @@ def update_user_level(request: Request, user_id: str, level_adjustment: int):
     if user:
         return models.Message(message="Level successfully updated.")
     else:
-        raise HTTPException(status_code=400, detail="User level update failed.")
+        raise HTTPException(status_code=403, detail="User level not in range 1-10.")
 
 
 @router.get("/level/get/", response_description="get user", status_code=status.HTTP_200_OK,
