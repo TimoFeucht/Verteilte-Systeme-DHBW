@@ -62,7 +62,8 @@ def get_question_for_user(request: Request, user: models.User):
     # remove correct answered questions from repeated_question_ids
     for answered_question in user["answered_questions"]:
         if answered_question["answer"] and answered_question["level"] == user["level"]:
-            repeated_question_ids.remove(answered_question["question_id"])
+            if answered_question["question_id"] in repeated_question_ids:
+                repeated_question_ids.remove(answered_question["question_id"])
 
     # return old question with wrong answer, if all questions have been answered correctly, return a new question
     if repeated_question_ids:
