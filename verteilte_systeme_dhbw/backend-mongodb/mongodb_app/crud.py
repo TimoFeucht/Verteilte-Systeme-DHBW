@@ -55,22 +55,24 @@ def get_question_for_user(request: Request, user: models.User):
     Returns a question for a user_id and the users level which has been answered false.
     If the user has already answered all questions correct, a new question is returned for the same level.
     """
-    # extract question_id's from answered_questions where answer is false in user's level
-    repeated_question_ids = [answered_question["question_id"] for answered_question in user["answered_questions"]
-                             if not answered_question["answer"] and answered_question["level"] == user["level"]]
+    question_counter = len([answered_question for answered_question in user["answered_questions"]])
+    # fetch an old question with wrong answer each 3rd question, if no old question with wrong answer and level of user is found, return a new question
+    if question_counter % 3 == 0:
+        # extract question_id's from answered_questions where answer is false in user's level
+        repeated_question_ids = [answered_question["question_id"] for answered_question in user["answered_questions"]
+                                 if not answered_question["answer"] and answered_question["level"] == user["level"]]
 
-    # remove correct answered questions from repeated_question_ids
-    for answered_question in user["answered_questions"]:
-        if answered_question["answer"] and answered_question["level"] == user["level"]:
-            if answered_question["question_id"] in repeated_question_ids:
-                repeated_question_ids.remove(answered_question["question_id"])
+        # remove correct answered questions from repeated_question_ids
+        for answered_question in user["answered_questions"]:
+            if answered_question["answer"] and answered_question["level"] == user["level"]:
+                if answered_question["question_id"] in repeated_question_ids:
+                    repeated_question_ids.remove(answered_question["question_id"])
 
-
-    # return old question with wrong answer, if all questions have been answered correctly, return a new question
-    if repeated_question_ids:
-        print("Old question with wrong answer found.")
-        question = request.app.database["questions"].find_one({"_id": repeated_question_ids[0]})
-        return question
+        # return old question with wrong answer, if all questions have been answered correctly, return a new question
+        if repeated_question_ids:
+            print("Old question with wrong answer found.")
+            question = request.app.database["questions"].find_one({"_id": repeated_question_ids[0]})
+            return question
 
     excluded_question_ids = [answered_question["question_id"] for answered_question in user["answered_questions"]]
     new_question = request.app.database["questions"].find_one({"level": user["level"], "_id": {
