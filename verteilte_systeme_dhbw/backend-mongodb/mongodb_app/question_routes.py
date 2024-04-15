@@ -40,14 +40,18 @@ def set_answer(request: Request, user_id: str, question_id: str, answer: bool):
 
     question = crud.verify_question(request, question_id)
     if not question:
-        raise HTTPException(status_code=404, detail=f"Answer could not be set. No question with question_id={question_id} found.")
+        raise HTTPException(status_code=404,
+                            detail=f"Answer could not be set. No question with question_id={question_id} found.")
 
     updated_user = crud.set_answer(request, user, question, answer)
     if updated_user.modified_count == 0:
         raise HTTPException(status_code=404, detail=f"Answer could not be set.")
 
-    # update user level if answer is correct
-    if answer:
+    # update user level if answer is correct each 5 correct answers (|correct_answers| % 5 == 0)
+    correct_answers = len(
+        [answered_question for answered_question in user["answered_questions"] if answered_question["answer"]])
+    if answer and correct_answers % 5 == 0:
+        print(f"{correct_answers} correct answers. Update user level.")
         user = crud.update_user_level(request, user, 1)
         if not user:
             raise HTTPException(status_code=403, detail="User level not in range 1-10.")
@@ -73,11 +77,10 @@ def get_quantity(request: Request, user_id: str):
         else:
             wrong_answers += 1
 
-    quantity = models.QuestionQuantity(total_questions=total_questions, correct_answers=correct_answers, wrong_answers=wrong_answers)
+    quantity = models.QuestionQuantity(total_questions=total_questions, correct_answers=correct_answers,
+                                       wrong_answers=wrong_answers)
 
     return quantity
-
-
 
 # @router.post("/create/", response_description="Create a new questions", status_code=status.HTTP_201_CREATED,
 #              response_model=models.Question)
