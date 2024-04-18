@@ -28,6 +28,7 @@ class apiCalls:
         self.update_level_url = self.base_url + 'user/level/update/'
         self.get_level_url = self.base_url + 'user/level/get/'
         self.delete_user_url = self.base_url + 'user/delete/'
+        self.get_question_quantity_url = self.base_url + 'question/quantity/'
 
     def try_request(self, method, url_suffix, **kwargs):
         full_url = self.base_url + url_suffix
@@ -63,3 +64,6 @@ class apiCalls:
 
     def delete_user(self, user_id):
         return self.try_request('delete', 'user/delete/', params={'user_id': user_id})
+
+    def get_question_quantity(self, user_id):
+        return self.try_request('get', 'question/quantity/', params={'user_id': user_id})
