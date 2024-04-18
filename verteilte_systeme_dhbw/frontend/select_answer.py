@@ -11,19 +11,19 @@ def start_game():
     # fetch user_id and level from the server
     user.user_id = api.connect_user()['_id']
 
-
     # clear the console
     os.system('cls' if os.name == 'nt' else 'clear')
-
-
 
     while True:
 
         user.level = api.get_level(user.user_id)
+        answer_count = api.get_question_quantity(user.user_id)
+
         print("********************************************************************************")
-        print("Your current level is: " + str(user.level['level']) + "        Correct answers: " + "        Wrong answers: ")
+        print("Your current level is: " + str(user.level['level']) + "      Correct answers: " + str(
+            answer_count['correct_answers']) + "      Wrong answers: " + str(answer_count['wrong_answers']))
         print("********************************************************************************")
-        # Todo add correct answer counter api call
+
         # get question from the server
         question = api.get_question(user.user_id)
         print("\n\n")
