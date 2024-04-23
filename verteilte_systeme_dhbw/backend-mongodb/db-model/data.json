@@ -100,8 +100,8 @@
         "topic": "geographie",
         "question": "Durch welche Laender fliesst der laengste Fluss der Erde?",
         "solution": {
-            "a": "Tansania, Ruanda, Burundi, die Demokratische Republik Kongo, Uganda, Kenia, Äthiopien, Eritrea, Suedsudan, Sudan und Ägypten",
-            "b": "Schweiz, Liechtenstein, Österreich, Deutschland, Frankreich und den Niederlanden",
+            "a": "Tansania, Ruanda, Burundi, die Demokratische Republik Kongo, Uganda, Kenia, Aethiopien, Eritrea, Suedsudan, Sudan und Aegypten",
+            "b": "Schweiz, Liechtenstein, Oesterreich, Deutschland, Frankreich und den Niederlanden",
             "c": "Peru, Kolumbien und Brasilien",
             "correct_answer": "a",
             "explanation": "Der Nil durchfliesst zahlreiche Laender Afrikas und ist bekannt fuer seine historische Bedeutung."
@@ -122,25 +122,25 @@
     {
         "level": 1,
         "topic": "geographie",
-        "question": "In welchem Kontinent liegt Ägypten?",
+        "question": "In welchem Kontinent liegt Aegypten?",
         "solution": {
             "a": "Asien",
             "b": "Afrika",
             "c": "Europa",
             "correct_answer": "b",
-            "explanation": "Ägypten liegt in Nordostafrika und ist bekannt für seine antiken Zivilisationen entlang des Nils."
+            "explanation": "Aegypten liegt in Nordostafrika und ist bekannt fuer seine antiken Zivilisationen entlang des Nils."
         }
     },
     {
         "level": 2,
         "topic": "geographie",
-        "question": "Welcher Fluss ist länger, der Rhein oder die Donau?",
+        "question": "Welcher Fluss ist laenger, der Rhein oder die Donau?",
         "solution": {
             "a": "Rhein",
             "b": "Donau",
             "c": "Beide sind gleich lang",
             "correct_answer": "b",
-            "explanation": "Die Donau ist mit etwa 2.850 km länger als der Rhein, der etwa 1.232 km lang ist."
+            "explanation": "Die Donau ist mit etwa 2.850 km laenger als der Rhein, der etwa 1.232 km lang ist."
         }
     },
     {
@@ -152,7 +152,7 @@
             "b": "Indonesien",
             "c": "Schweden",
             "correct_answer": "b",
-            "explanation": "Indonesien hat mit über 17.000 Inseln die höchste Anzahl an Inseln eines Landes."
+            "explanation": "Indonesien hat mit ueber 17.000 Inseln die hoechste Anzahl an Inseln eines Landes."
         }
     },
     {
@@ -164,7 +164,7 @@
             "b": "Totes Meer",
             "c": "Baikalsee",
             "correct_answer": "a",
-            "explanation": "Der Marianengraben ist der tiefste bekannte Punkt der Erde mit einer Tiefe von über 11.000 Metern."
+            "explanation": "Der Marianengraben ist der tiefste bekannte Punkt der Erde mit einer Tiefe von ueber 11.000 Metern."
         }
     },
     {
@@ -194,13 +194,13 @@
     {
         "level": 3,
         "topic": "geographie",
-        "question": "Welches Gebirge ist das längste der Welt?",
+        "question": "Welches Gebirge ist das laengste der Welt?",
         "solution": {
             "a": "Anden",
             "b": "Himalaya",
             "c": "Rocky Mountains",
             "correct_answer": "a",
-            "explanation": "Die Anden sind mit einer Länge von etwa 7.000 km das längste Gebirge der Welt."
+            "explanation": "Die Anden sind mit einer Laenge von etwa 7.000 km das laengste Gebirge der Welt."
         }
     },
     {
@@ -224,31 +224,31 @@
             "b": "Bolivien",
             "c": "Peru",
             "correct_answer": "a",
-            "explanation": "Chile grenzt nicht an Brasilien, während Bolivien und Peru es tun."
+            "explanation": "Chile grenzt nicht an Brasilien, waehrend Bolivien und Peru es tun."
         }
     },
     {
         "level": 1,
         "topic": "geographie",
-        "question": "Welches ist die größte Stadt Europas nach Einwohnerzahl?",
+        "question": "Welches ist die groesste Stadt Europas nach Einwohnerzahl?",
         "solution": {
             "a": "London",
             "b": "Moskau",
             "c": "Berlin",
             "correct_answer": "b",
-            "explanation": "Moskau ist mit einer Einwohnerzahl von über 12 Millionen Menschen die größte Stadt Europas."
+            "explanation": "Moskau ist mit einer Einwohnerzahl von ueber 12 Millionen Menschen die groesste Stadt Europas."
         }
     },
     {
         "level": 1,
         "topic": "astronomie",
-        "question": "Welcher Planet ist unserem Sonnensystem am nächsten?",
+        "question": "Welcher Planet ist unserem Sonnensystem am naechsten?",
         "solution": {
             "a": "Merkur",
             "b": "Venus",
             "c": "Mars",
             "correct_answer": "a",
-            "explanation": "Merkur ist der Sonne am nächsten gelegene Planet in unserem Sonnensystem."
+            "explanation": "Merkur ist der Sonne am naechsten gelegene Planet in unserem Sonnensystem."
         }
     },
     {
@@ -260,7 +260,7 @@
             "b": "Jupiter",
             "c": "Saturn",
             "correct_answer": "a",
-            "explanation": "Mars ist wegen seiner rötlichen Färbung, die durch Eisenoxid auf seiner Oberfläche verursacht wird, als der Rote Planet bekannt."
+            "explanation": "Mars ist wegen seiner roetlichen Faerbung, die durch Eisenoxid auf seiner Oberflaeche verursacht wird, als der Rote Planet bekannt."
         }
     },
     {
@@ -272,19 +272,19 @@
             "b": "Die Explosion eines Sterns am Ende seines Lebens",
             "c": "Ein sehr heller Komet",
             "correct_answer": "b",
-            "explanation": "Eine Supernova ist die explosive Endphase im Leben eines Sterns, bei der der Stern einen Großteil seiner Masse in einer gewaltigen Explosion freisetzt."
+            "explanation": "Eine Supernova ist die explosive Endphase im Leben eines Sterns, bei der der Stern einen Grossteil seiner Masse in einer gewaltigen Explosion freisetzt."
         }
     },
     {
         "level": 4,
         "topic": "astronomie",
-        "question": "Welcher ist der größte Planet in unserem Sonnensystem?",
+        "question": "Welcher ist der groesste Planet in unserem Sonnensystem?",
         "solution": {
             "a": "Neptun",
             "b": "Saturn",
             "c": "Jupiter",
             "correct_answer": "c",
-            "explanation": "Jupiter ist der größte Planet in unserem Sonnensystem."
+            "explanation": "Jupiter ist der groesste Planet in unserem Sonnensystem."
         }
     },
     {
@@ -293,22 +293,22 @@
         "question": "Wie viele Monde hat der Planet Jupiter?",
         "solution": {
             "a": "4",
-            "b": "Über 50",
+            "b": "Ueber 50",
             "c": "12",
             "correct_answer": "b",
-            "explanation": "Jupiter hat über 50 bekannte Monde, wobei ständig neue entdeckt werden."
+            "explanation": "Jupiter hat ueber 50 bekannte Monde, wobei staendig neue entdeckt werden."
         }
     },
     {
         "level": 2,
         "topic": "astronomie",
-        "question": "Was ist der Asteroidengürtel?",
+        "question": "Was ist der Asteroidenguertel?",
         "solution": {
             "a": "Ein Ring aus Gas um Saturn",
             "b": "Eine Region voller Asteroiden zwischen den Umlaufbahnen von Mars und Jupiter",
             "c": "Ein neuer Planet am Rande unseres Sonnensystems",
             "correct_answer": "b",
-            "explanation": "Der Asteroidengürtel ist eine Region des Sonnensystems, die sich zwischen den Umlaufbahnen von Mars und Jupiter befindet und Millionen von Asteroiden enthält."
+            "explanation": "Der Asteroidenguertel ist eine Region des Sonnensystems, die sich zwischen den Umlaufbahnen von Mars und Jupiter befindet und Millionen von Asteroiden enthaelt."
         }
     },
     {
@@ -316,11 +316,11 @@
         "topic": "astronomie",
         "question": "Was ist ein Lichtjahr?",
         "solution": {
-            "a": "Die Zeit, die Licht benötigt, um in einem Jahr zu reisen",
-            "b": "Die Entfernung, die Licht in einem Jahr zurücklegt",
-            "c": "Eine Maßeinheit für die Helligkeit von Sternen",
+            "a": "Die Zeit, die Licht benoetigt, um in einem Jahr zu reisen",
+            "b": "Die Entfernung, die Licht in einem Jahr zuruecklegt",
+            "c": "Eine Masseinheit fuer die Helligkeit von Sternen",
             "correct_answer": "b",
-            "explanation": "Ein Lichtjahr ist die Entfernung, die Licht in einem Jahr zurücklegt, und wird verwendet, um Entfernungen im Universum zu messen."
+            "explanation": "Ein Lichtjahr ist die Entfernung, die Licht in einem Jahr zuruecklegt, und wird verwendet, um Entfernungen im Universum zu messen."
         }
     },
     {
@@ -329,10 +329,10 @@
         "question": "Welche Galaxie ist unsere Heimatgalaxie?",
         "solution": {
             "a": "Andromeda-Galaxie",
-            "b": "Milchstraße",
+            "b": "Milchstrasse",
             "c": "Sombrero-Galaxie",
             "correct_answer": "b",
-            "explanation": "Die Milchstraße ist unsere Heimatgalaxie, ein gigantisches Sternsystem, das die Sonne und die Erde enthält."
+            "explanation": "Die Milchstrasse ist unsere Heimatgalaxie, ein gigantisches Sternsystem, das die Sonne und die Erde enthaelt."
         }
     },
     {
@@ -342,7 +342,7 @@
         "solution": {
             "a": "Ein Teleskop auf einem Berg in Hawaii",
             "b": "Ein Weltraumteleskop, das um die Erde kreist",
-            "c": "Das größte Teleskop in der Wüste von Chile",
+            "c": "Das groesste Teleskop in der Wueste von Chile",
             "correct_answer": "b",
             "explanation": "Das Hubble-Weltraumteleskop ist ein Weltraumteleskop, das seit 1990 um die Erde kreist und Astronomen hilft, das Universum zu erforschen."
         }
@@ -378,9 +378,9 @@
         "solution": {
             "a": "Ein kleiner Planet",
             "b": "Ein Stern mit Schweif",
-            "c": "Ein kleiner Himmelskörper aus Eis und Staub, der um die Sonne kreist",
+            "c": "Ein kleiner Himmelskoerper aus Eis und Staub, der um die Sonne kreist",
             "correct_answer": "c",
-            "explanation": "Ein Komet ist ein kleiner Himmelskörper aus Eis und Staub, der um die Sonne kreist und einen Schweif aus Gas und Staub bildet, wenn er sich der Sonne nähert."
+            "explanation": "Ein Komet ist ein kleiner Himmelskoerper aus Eis und Staub, der um die Sonne kreist und einen Schweif aus Gas und Staub bildet, wenn er sich der Sonne naehert."
         }
     },
     {
@@ -392,7 +392,7 @@
             "b": "Ein Mond eines Planeten",
             "c": "Ein Stern",
             "correct_answer": "a",
-            "explanation": "Ein Planetoid ist ein kleiner Himmelskörper, der sich wie ein Planet um die Sonne bewegt, aber nicht groß genug ist, um als Planet klassifiziert zu werden."
+            "explanation": "Ein Planetoid ist ein kleiner Himmelskoerper, der sich wie ein Planet um die Sonne bewegt, aber nicht gross genug ist, um als Planet klassifiziert zu werden."
         }
     },
     {
@@ -402,7 +402,7 @@
         "solution": {
             "a": "Der Prozess, durch den Tiere Sauerstoff verbrauchen.",
             "b": "Der Prozess, durch den Pflanzen Glucose und Sauerstoff erzeugen.",
-            "c": "Der Prozess, durch den Pflanzen Kohlendioxid aus der Atmosphäre entfernen.",
+            "c": "Der Prozess, durch den Pflanzen Kohlendioxid aus der Atmosphaere entfernen.",
             "correct_answer": "b",
             "explanation": "Photosynthese ist der Prozess, durch den Pflanzen unter Verwendung von Lichtenergie Glucose aus Kohlendioxid und Wasser herstellen und dabei Sauerstoff freisetzen."
         }
@@ -412,7 +412,7 @@
         "topic": "biology",
         "question": "Was sind Mitochondrien?",
         "solution": {
-            "a": "Die Strukturen in einer Zelle, die für die Photosynthese verantwortlich sind.",
+            "a": "Die Strukturen in einer Zelle, die fuer die Photosynthese verantwortlich sind.",
             "b": "Die Strukturen in einer Zelle, die Proteine herstellen.",
             "c": "Die Strukturen in einer Zelle, die Energie in Form von ATP produzieren.",
             "correct_answer": "c",
@@ -424,11 +424,11 @@
         "topic": "biology",
         "question": "Was ist die DNA?",
         "solution": {
-            "a": "Ein Energieübertragungsmolekül.",
-            "b": "Das Molekül, das die genetischen Anweisungen eines Organismus trägt.",
+            "a": "Ein Energieuebertragungsmolekuel.",
+            "b": "Das Molekuel, das die genetischen Anweisungen eines Organismus traegt.",
             "c": "Ein Typ von Protein in Muskelzellen.",
             "correct_answer": "b",
-            "explanation": "DNA ist das Molekül, das die genetischen Anweisungen für die Entwicklung, das Funktionieren, das Wachstum und die Reproduktion aller bekannten lebenden Organismen und vieler Viren trägt."
+            "explanation": "DNA ist das Molekuel, das die genetischen Anweisungen fuer die Entwicklung, das Funktionieren, das Wachstum und die Reproduktion aller bekannten lebenden Organismen und vieler Viren traegt."
         }
     },
     {
@@ -436,11 +436,11 @@
         "topic": "biology",
         "question": "Was ist eine Zellmembran?",
         "solution": {
-            "a": "Die starre Außenschicht einer Pflanzenzelle, die für Stabilität sorgt.",
-            "b": "Eine durchlässige Schicht, die eine Zelle umgibt und den Ein- und Austritt von Stoffen kontrolliert.",
-            "c": "Das Material innerhalb der Zelle, das die Organellen enthält.",
+            "a": "Die starre Aussenschicht einer Pflanzenzelle, die fuer Stabilitaet sorgt.",
+            "b": "Eine durchlaessige Schicht, die eine Zelle umgibt und den Ein- und Austritt von Stoffen kontrolliert.",
+            "c": "Das Material innerhalb der Zelle, das die Organellen enthaelt.",
             "correct_answer": "b",
-            "explanation": "Die Zellmembran ist eine selektiv durchlässige Membran, die eine Zelle umgibt und den Ein- und Austritt von Stoffen in die und aus der Zelle regelt."
+            "explanation": "Die Zellmembran ist eine selektiv durchlaessige Membran, die eine Zelle umgibt und den Ein- und Austritt von Stoffen in die und aus der Zelle regelt."
         }
     },
     {
@@ -449,10 +449,10 @@
         "question": "Was ist Evolution?",
         "solution": {
             "a": "Die Anpassung von Organismen an das Leben im Wasser.",
-            "b": "Der Prozess, durch den neue Arten durch genetische Veränderungen entstehen.",
-            "c": "Die Veränderung der Eigenschaften von Steinen über Zeit.",
+            "b": "Der Prozess, durch den neue Arten durch genetische Veraenderungen entstehen.",
+            "c": "Die Veraenderung der Eigenschaften von Steinen ueber Zeit.",
             "correct_answer": "b",
-            "explanation": "Evolution ist der Prozess, durch den im Laufe der Generationen Änderungen in den genetischen Merkmalen von Populationen auftreten, was zur Entstehung neuer Arten führen kann."
+            "explanation": "Evolution ist der Prozess, durch den im Laufe der Generationen Aenderungen in den genetischen Merkmalen von Populationen auftreten, was zur Entstehung neuer Arten fuehren kann."
         }
     },
     {
@@ -460,23 +460,23 @@
         "topic": "biology",
         "question": "Was sind Proteine?",
         "solution": {
-            "a": "Einfache Zucker, die die Hauptenergiequelle für Zellen sind.",
-            "b": "Moleküle, die Zellstrukturen bilden und als Enzyme fungieren.",
+            "a": "Einfache Zucker, die die Hauptenergiequelle fuer Zellen sind.",
+            "b": "Molekuele, die Zellstrukturen bilden und als Enzyme fungieren.",
             "c": "Fette, die in Zellmembranen gefunden werden.",
             "correct_answer": "b",
-            "explanation": "Proteine sind große Moleküle, die eine Vielzahl von Funktionen in Organismen ausüben, einschließlich des Aufbaus von Zellstrukturen und des Handelns als Enzyme."
+            "explanation": "Proteine sind grosse Molekuele, die eine Vielzahl von Funktionen in Organismen ausueben, einschliesslich des Aufbaus von Zellstrukturen und des Handelns als Enzyme."
         }
     },
     {
         "level": 3,
         "topic": "biology",
-        "question": "Was ist ein Ökosystem?",
+        "question": "Was ist ein Oekosystem?",
         "solution": {
             "a": "Eine Sammlung von Pflanzenarten in einem bestimmten Gebiet.",
             "b": "Ein geschlossenes System in Laboratorien zur Untersuchung von Pflanzenwachstum.",
             "c": "Eine Gemeinschaft von lebenden Organismen und ihre Wechselwirkung mit ihrer abiotischen Umgebung.",
             "correct_answer": "c",
-            "explanation": "Ein Ökosystem umfasst alle lebenden Organismen in einem Gebiet sowie ihre physische Umgebung und wie sie miteinander und mit der Umgebung interagieren."
+            "explanation": "Ein Oekosystem umfasst alle lebenden Organismen in einem Gebiet sowie ihre physische Umgebung und wie sie miteinander und mit der Umgebung interagieren."
         }
     },
     {
@@ -485,10 +485,10 @@
         "question": "Was beschreibt das Gesetz der Segregation?",
         "solution": {
             "a": "Die Trennung von Kontinenten im Laufe der Erdgeschichte.",
-            "b": "Die Aufteilung von homologen Chromosomen während der Meiose.",
-            "c": "Die Verteilung von Energie in einem Ökosystem.",
+            "b": "Die Aufteilung von homologen Chromosomen waehrend der Meiose.",
+            "c": "Die Verteilung von Energie in einem Oekosystem.",
             "correct_answer": "b",
-            "explanation": "Das Gesetz der Segregation, eines der Mendelschen Gesetze, beschreibt, wie Paare von Genen (Allele) während der Meiose getrennt und zufällig auf die Gameten verteilt werden."
+            "explanation": "Das Gesetz der Segregation, eines der Mendelschen Gesetze, beschreibt, wie Paare von Genen (Allele) waehrend der Meiose getrennt und zufaellig auf die Gameten verteilt werden."
         }
     },
     {
@@ -500,7 +500,7 @@
             "b": "Die Verwendung von chemischen Reaktionen, um Gene zu studieren.",
             "c": "Das direkte Manipulieren von Genen innerhalb eines Organismus.",
             "correct_answer": "c",
-            "explanation": "Gentechnik bezieht sich auf die Technologien, die verwendet werden, um das genetische Material eines Organismus zu verändern und neue Eigenschaften einzuführen oder bestehende zu ändern."
+            "explanation": "Gentechnik bezieht sich auf die Technologien, die verwendet werden, um das genetische Material eines Organismus zu veraendern und neue Eigenschaften einzufuehren oder bestehende zu aendern."
         }
     },
     {
@@ -510,7 +510,7 @@
         "solution": {
             "a": "Die Produktion von Sauerstoff.",
             "b": "Die Umwandlung von Glucose in ATP.",
-            "c": "Die Erzeugung von Kohlendioxid für die Photosynthese.",
+            "c": "Die Erzeugung von Kohlendioxid fuer die Photosynthese.",
             "correct_answer": "b",
             "explanation": "Der Hauptzweck der Zellatmung ist die Umwandlung der in Glucose gespeicherten Energie in ATP, die Zellen als Energiequelle nutzen."
         }
@@ -521,10 +521,10 @@
         "question": "Was misst ein Amperemeter?",
         "solution": {
             "a": "Spannung",
-            "b": "Stromstärke",
+            "b": "Stromstaerke",
             "c": "Widerstand",
             "correct_answer": "b",
-            "explanation": "Ein Amperemeter misst die Stromstärke in einem elektrischen Stromkreis."
+            "explanation": "Ein Amperemeter misst die Stromstaerke in einem elektrischen Stromkreis."
         }
     },
     {
@@ -536,7 +536,7 @@
             "b": "Etwa 150.000 km/s",
             "c": "Etwa 1.000.000 km/s",
             "correct_answer": "a",
-            "explanation": "Die Lichtgeschwindigkeit im Vakuum beträgt etwa 300.000 Kilometer pro Sekunde."
+            "explanation": "Die Lichtgeschwindigkeit im Vakuum betraegt etwa 300.000 Kilometer pro Sekunde."
         }
     },
     {
@@ -546,9 +546,9 @@
         "solution": {
             "a": "Die Beziehung zwischen Strom und Spannung in einem idealen Kondensator.",
             "b": "Die Beziehung zwischen magnetischer Flussdichte und elektrischem Strom.",
-            "c": "Die Beziehung zwischen Stromstärke, Spannung und Widerstand.",
+            "c": "Die Beziehung zwischen Stromstaerke, Spannung und Widerstand.",
             "correct_answer": "c",
-            "explanation": "Das Ohmsche Gesetz beschreibt die Proportionalität zwischen Spannung, Stromstärke und Widerstand in einem elektrischen Stromkreis."
+            "explanation": "Das Ohmsche Gesetz beschreibt die Proportionalitaet zwischen Spannung, Stromstaerke und Widerstand in einem elektrischen Stromkreis."
         }
     },
     {
@@ -556,11 +556,11 @@
         "topic": "physics",
         "question": "Was ist ein Photon?",
         "solution": {
-            "a": "Ein Teilchen, das die Schwerkraft überträgt.",
-            "b": "Ein Teilchen, das Licht und andere elektromagnetische Strahlung überträgt.",
-            "c": "Ein Teilchen, das für die Kernfusion in Sternen verantwortlich ist.",
+            "a": "Ein Teilchen, das die Schwerkraft uebertraegt.",
+            "b": "Ein Teilchen, das Licht und andere elektromagnetische Strahlung uebertraegt.",
+            "c": "Ein Teilchen, das fuer die Kernfusion in Sternen verantwortlich ist.",
             "correct_answer": "b",
-            "explanation": "Ein Photon ist ein elementares Teilchen, das als Quant der elektromagnetischen Strahlung, einschließlich Licht, dient."
+            "explanation": "Ein Photon ist ein elementares Teilchen, das als Quant der elektromagnetischen Strahlung, einschliesslich Licht, dient."
         }
     },
     {
@@ -580,9 +580,9 @@
         "topic": "physics",
         "question": "Was beschreibt die kinetische Energie?",
         "solution": {
-            "a": "Die Energie, die ein Körper durch seine Bewegung besitzt.",
-            "b": "Die Energie, die ein Körper durch seine Position besitzt.",
-            "c": "Die Energie, die ein Körper durch seine Temperatur besitzt.",
+            "a": "Die Energie, die ein Koerper durch seine Bewegung besitzt.",
+            "b": "Die Energie, die ein Koerper durch seine Position besitzt.",
+            "c": "Die Energie, die ein Koerper durch seine Temperatur besitzt.",
             "correct_answer": "a",
             "explanation": "Die kinetische Energie ist die Energie, die ein Objekt aufgrund seiner Bewegung besitzt."
         }
@@ -594,7 +594,7 @@
         "solution": {
             "a": "Ein Bereich im Weltraum, aus dem Licht nicht entkommen kann, weil die Gravitation zu stark ist.",
             "b": "Ein neugeborener Stern.",
-            "c": "Ein dunkler Bereich im Universum, der keine Sterne enthält.",
+            "c": "Ein dunkler Bereich im Universum, der keine Sterne enthaelt.",
             "correct_answer": "a",
             "explanation": "Ein schwarzes Loch ist ein Bereich im Raum, dessen Gravitationsfeld so stark ist, dass nichts, nicht einmal Licht, entkommen kann."
         }
@@ -604,8 +604,8 @@
         "topic": "physics",
         "question": "Was versteht man unter der Quantenmechanik?",
         "solution": {
-            "a": "Die Wissenschaft von sehr großen Objekten, wie Planeten und Sternen.",
-            "b": "Die Wissenschaft von den Bewegungsgesetzen und Kräften im Universum.",
+            "a": "Die Wissenschaft von sehr grossen Objekten, wie Planeten und Sternen.",
+            "b": "Die Wissenschaft von den Bewegungsgesetzen und Kraeften im Universum.",
             "c": "Die Wissenschaft, die das Verhalten von Materie und Energie auf der Ebene von Atomen und subatomaren Teilchen beschreibt.",
             "correct_answer": "c",
             "explanation": "Die Quantenmechanik ist der Teil der Physik, der das Verhalten von Materie und Energie auf der Ebene von Atomen und subatomaren Teilchen beschreibt."
@@ -614,25 +614,25 @@
     {
         "level": 5,
         "topic": "physics",
-        "question": "Was ist die Relativitätstheorie?",
+        "question": "Was ist die Relativitaetstheorie?",
         "solution": {
             "a": "Eine Theorie, die das Verhalten von Gasen bei hohen Temperaturen beschreibt.",
-            "b": "Eine Theorie, die die Struktur des Atomkerns erklärt.",
+            "b": "Eine Theorie, die die Struktur des Atomkerns erklaert.",
             "c": "Eine Theorie von Albert Einstein, die die Beziehung zwischen Raum, Zeit und Gravitation beschreibt.",
             "correct_answer": "c",
-            "explanation": "Die Relativitätstheorie ist eine von Albert Einstein entwickelte Theorie, die grundlegende Konzepte von Raum, Zeit und Gravitation neu definiert."
+            "explanation": "Die Relativitaetstheorie ist eine von Albert Einstein entwickelte Theorie, die grundlegende Konzepte von Raum, Zeit und Gravitation neu definiert."
         }
     },
     {
         "level": 1,
         "topic": "physics",
-        "question": "Wovon hängt die Schwingungsdauer eines Pendels ab?",
+        "question": "Wovon haengt die Schwingungsdauer eines Pendels ab?",
         "solution": {
-            "a": "Von der Masse des Pendelkörpers",
-            "b": "Von der Stärke der Gravitation",
-            "c": "Von der Länge des Pendelfadens",
+            "a": "Von der Masse des Pendelkoerpers",
+            "b": "Von der Staerke der Gravitation",
+            "c": "Von der Laenge des Pendelfadens",
             "correct_answer": "c",
-            "explanation": "Die Schwingungsdauer eines Pendels hängt hauptsächlich von der Länge des Pendelfadens ab."
+            "explanation": "Die Schwingungsdauer eines Pendels haengt hauptsaechlich von der Laenge des Pendelfadens ab."
         }
     }
 ]
