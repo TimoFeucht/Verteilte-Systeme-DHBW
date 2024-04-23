@@ -90,8 +90,8 @@ def update_user_level(request: Request, user: models.User, increment: int = -1 |
     Returns a user with updated level or None if the new level is not in the range 1-10.
     """
     new_user_level = user["level"] + increment
-    # user level not in range 1-10
-    if new_user_level < 1 or new_user_level > 10:
+    # user level not in range 1-5
+    if new_user_level < 1 or new_user_level > 5:
         return None
 
     # update user level

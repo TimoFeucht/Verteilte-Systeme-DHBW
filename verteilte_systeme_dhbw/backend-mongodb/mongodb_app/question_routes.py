@@ -52,10 +52,10 @@ def set_answer(request: Request, user_id: str, question_id: str, answer: bool):
         [answered_question for answered_question in user["answered_questions"] if answered_question["answer"]])
     if answer:
         if correct_answers > 0 and correct_answers % 5 == 0:
-            print(f"{correct_answers} correct answers. Update user level.")
+            # print(f"{correct_answers} correct answers. Update user level.")
             user = crud.update_user_level(request, user, 1)
             if not user:
-                raise HTTPException(status_code=403, detail="User level not in range 1-10.")
+                raise HTTPException(status_code=403, detail="User level not in range 1-5.")
 
     return models.Message(message="Answer set successfully.")
 
