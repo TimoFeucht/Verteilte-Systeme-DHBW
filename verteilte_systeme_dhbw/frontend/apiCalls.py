@@ -51,7 +51,34 @@ class apiCalls:
         return self.try_request('post', 'user/connect/')
 
     def get_question(self, user_id):
-        return self.try_request('get', 'question/getQuestion/', params={'user_id': user_id})
+        """
+        Get a question for the user with the given ID.
+        Problem came up that Server sends 400 if no question is available, so it needs to be handled.
+
+        :param user_id:
+        :return:
+        """
+
+        full_url = self.base_url + 'question/getQuestion/'
+        try:
+            response = requests.get(full_url, params={'user_id': user_id})
+            if response.status_code == 200:
+                return response.json()  # Return the data if the request was successful
+            elif response.status_code == 400:
+                print(f"Bad request, failed to retrieve question for user {user_id}.")
+                return None  # Handle the 400 error without retrying
+            else:
+                raise requests.exceptions.HTTPError(f"HTTP Error: {response.status_code}")
+        except requests.exceptions.RequestException as e:
+            print(f"Network or HTTP error occurred: {e}")
+            # Optionally try to find a new server or log the error based on the failure
+            self.base_url = self.get_base_url()  # Try to find a new working server
+            if self.base_url:
+                self.update_urls()  # Update URLs to the new base URL
+                return self.get_question(user_id)  # Recursive call with updated URL
+            else:
+                print("No available servers to handle the request.")
+                return None  # Return None if no servers are available after rechecking
 
     def set_answer(self, user_id, question_id, answer):
         return self.try_request('put', 'question/setAnswer/', params={'user_id': user_id, 'question_id': question_id, 'answer': answer})
