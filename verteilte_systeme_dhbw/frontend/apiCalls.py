@@ -65,7 +65,7 @@ class apiCalls:
             if response.status_code == 200:
                 return response.json()  # Return the data if the request was successful
             elif response.status_code == 400:
-                print(f"Bad request, failed to retrieve question for user {user_id}.")
+
                 return None  # Handle the 400 error without retrying
             else:
                 raise requests.exceptions.HTTPError(f"HTTP Error: {response.status_code}")
