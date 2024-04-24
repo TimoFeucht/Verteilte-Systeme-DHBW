@@ -49,7 +49,7 @@ def set_answer(request: Request, user_id: str, question_id: str, answer: bool):
 
     # update user level if answer is correct each 5 correct answers (|correct_answers| % 5 == 0)
     correct_answers = len(
-        [answered_question for answered_question in user["answered_questions"] if answered_question["answer"]])
+        [answered_question for answered_question in user["answered_questions"] if answered_question["answer"]]) + 1
     if answer:
         if correct_answers > 0 and correct_answers % 5 == 0:
             # print(f"{correct_answers} correct answers. Update user level.")
