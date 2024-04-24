@@ -66,11 +66,18 @@ def adjust_level(api, user):
         level_adjustment = input("Increase or decrease level by typing 1 or -1: ")
         if level_adjustment in ['1', '-1']:
             level_adjustment = int(level_adjustment)
-            api.update_level(user.user_id, level_adjustment)
-            print("Level increased!" if level_adjustment == 1 else "Level decreased!")
+            # API call to adjust the level and receive the response
+            response = api.update_level(user.user_id, level_adjustment)
+            if response:
+                # Check the response for success confirmation
+                if 'success' in response and response['success']:
+                    print("Level increased!" if level_adjustment == 1 else "Level decreased!")
+            else:
+                print("Failed to update the level. Please try again.")
             break
         else:
             print("Please type 1 or -1!")
+
 
 
 def print_question(question):
