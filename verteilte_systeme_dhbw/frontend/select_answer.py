@@ -53,11 +53,11 @@ def start_game():
 
         user_input = input("Press Q to quit, L to adjust your level, or any other key to continue... ")
 
-        if user_input == "Q":
+        if user_input == "Q" or user_input == "q":
             print("Goodbye!")
             api.delete_user(user.user_id)
             exit()
-        elif user_input == "L":
+        elif user_input == "L" or user_input == "l":
             adjust_level(api, user)
 
 
@@ -95,6 +95,6 @@ def print_question(question):
 def get_user_answer(question):
     while True:
         user_answer = input("Your answer: ")
-        if user_answer in ['a', 'b', 'c']:
+        if user_answer in ['a', 'b', 'c', 'A', 'B', 'C']:
             return user_answer
         print("Please type a, b or c!")
