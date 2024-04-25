@@ -3,8 +3,8 @@ import requests
 class apiCalls:
     def __init__(self):
         self.base_urls = [
-            'http://10.8.0.1:9999',
-            'http://10.8.0.2:9999',
+            'http://10.8.0.1:9999/',
+            'http://10.8.0.2:9999/',
             # 'http://127.0.0.1:8000/',
             # 'http://127.0.0.2:8000/',
             # 'http://127.0.0.3:8000/'
