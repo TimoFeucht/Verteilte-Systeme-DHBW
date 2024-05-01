@@ -1,47 +1,38 @@
-import unittest
-import time
-from verteilte_systeme_dhbw.frontend.apiCalls import apiCalls
+from locust import HttpUser, TaskSet, task, between
 
 
-class TestAPILatency:
-    def __init__(self):
-        self.api = apiCalls(local_urls=False)
-        self.user_id = self.get_user_id()
-        self.question_id = self.get_question_id()
+class TestAPILatency(HttpUser):
+    wait_time = between(1, 2)
+    _example_user_id = "13cc528d-ada0-47a7-9aa9-2c3c0e46f373"
+    _example_question_id = "08cda6d9-b2ba-4867-b096-8bacb290da05"
 
-    def get_user_id(self):
-        response = self.api.connect_user()
-        return response['_id']
+    @task
+    def index_page(self):
+        self.client.get("/")
 
-    def get_question_id(self):
-        response = self.api.get_question(self.user_id)
-        return response['_id']
+    @task
+    def get_question_for_user(self):
+        # example url
+        # http://127.0.0.1:8000/question/getQuestion/?user_id=13cc528d-ada0-47a7-9aa9-2c3c0e46f373
+        self.client.get("/question/getQuestion/" + str("?user_id=") + str(self._example_user_id))
 
-    def test_average_latency(self):
-        # List all routes to be tested
-        functions = [
-            apiCalls.get_question(self.api, self.user_id),
-            apiCalls.set_answer(self.api, self.user_id, self.question_id, True),
-            apiCalls.update_level(self.api, self.user_id, 1),
-            apiCalls.get_level(self.api, self.user_id),
-            apiCalls.get_question_quantity(self.api, self.user_id),
-            apiCalls.delete_user(self.api, self.user_id),
-        ]
-        total_time = 0
-        num_requests = len(functions)
+    @task
+    def put_set_answer(self):
+        # example url
+        # http://127.0.0.1:8000/question/setAnswer/?user_id=13cc528d-ada0-47a7-9aa9-2c3c0e46f373&question_id=08cda6d9-b2ba-4867-b096-8bacb290da05&answer=true
+        self.client.put(
+            "/question/setAnswer/" + str("?user_id=") + str(self._example_user_id) + str("&question_id=") + str(
+                self._example_question_id) + str("&answer=false"))
 
-        for fun in functions:
-            start_time = time.time()
-            response = fun
-            print(response)
-            end_time = time.time()
-            print(f"Time: {end_time - start_time:.8f} seconds")
-            total_time += (end_time - start_time)
+    @task
+    def get_question_quantity(self):
+        self.client.get("/question/quantity/" + str("?user_id=") + str(self._example_user_id))
 
-        average_latency = total_time / num_requests
-        print(f"Average Latency: {average_latency:.4f} seconds")
+    # @task
+    # def put_user_level_update(self):
+    #     self.client.put(
+    #         "/user/level/update/" + str("?user_id=") + str(self._example_user_id) + str("&level_adjustment=1"))
 
-
-if __name__ == '__main__':
-    t = TestAPILatency()
-    t.test_average_latency()
+    @task
+    def get_user_level(self):
+        self.client.get("/user/level/get/" + str("?user_id=") + str(self._example_user_id))
