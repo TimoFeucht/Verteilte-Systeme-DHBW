@@ -2,7 +2,7 @@ import requests
 import json
 
 # Note: Run this script only once.
-# Do not run with "current file", only run this script out of README.md in the backend-rqlite folder.
+# Do not run with "current file", only run this script out of README.md in the backend_rqlite folder.
 
 url_execute = 'http://localhost:4001/db/execute'
 

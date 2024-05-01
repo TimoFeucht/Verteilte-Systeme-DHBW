@@ -4,8 +4,8 @@ The project is called *Verteiltes Lernsystem mit adaptiver Schwierigkeitsanpassu
 
 This project contains: 
 - [Frontend](verteilte_systeme_dhbw/frontend/README.md)
-- [Backend with rqlite](verteilte_systeme_dhbw/backend-rqlite/README.md)
-- [Backend with MongoDB](verteilte_systeme_dhbw/backend-mongodb/README.md)
+- [Backend with rqlite](verteilte_systeme_dhbw/backend_rqlite/README.md)
+- [Backend with MongoDB](verteilte_systeme_dhbw/backend_mongodb/README.md)
 
 ## Frontend
 The frontend is a simple console application that allows the user to interact with the backend. 

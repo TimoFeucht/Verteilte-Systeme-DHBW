@@ -1,11 +1,16 @@
 import requests
 
+
 class apiCalls:
-    def __init__(self):
+
+    def __init__(self, local_urls=True):
         self.base_urls = [
             'http://127.0.0.1:8000/',
             'http://127.0.0.2:8000/',
             'http://127.0.0.3:8000/'
+        ] if local_urls else [
+            'http://10.8.0.1:9999/',
+            'http://10.8.0.2:9999/',
         ]
         self.base_url = self.get_base_url()
         self.update_urls()
@@ -81,7 +86,8 @@ class apiCalls:
                 return None  # Return None if no servers are available after rechecking
 
     def set_answer(self, user_id, question_id, answer):
-        return self.try_request('put', 'question/setAnswer/', params={'user_id': user_id, 'question_id': question_id, 'answer': answer})
+        return self.try_request('put', 'question/setAnswer/',
+                                params={'user_id': user_id, 'question_id': question_id, 'answer': answer})
 
     def update_level(self, user_id, level_adjustment):
         """

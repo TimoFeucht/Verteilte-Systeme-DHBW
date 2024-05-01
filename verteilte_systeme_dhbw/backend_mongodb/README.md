@@ -2,7 +2,7 @@
 
 ## Start backend locally
 If you want to run the backend locally for development or testing, execute this command.
-Make sure you are in the folder `verteilte_systeme_dhbw/backend-mongodb` when executing this command.
+Make sure you are in the folder `verteilte_systeme_dhbw/backend_mongodb` when executing this command.
 ```bash
 python -m uvicorn mongodb_app.main:app --reload
 ```
@@ -20,4 +20,4 @@ If you want to start the backend via uvicorn on the Raspberry Pi, please use the
 ```bash
 python -m uvicorn mongodb_app.main:app --reload --host=0.0.0.0 --port=9000
 ```
-Make sure you are in the folder `verteilte_systeme_dhbw/backend-mongodb` when executing this command.
+Make sure you are in the folder `verteilte_systeme_dhbw/backend_mongodb` when executing this command.
